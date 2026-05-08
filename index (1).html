@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shoukat Ali Piracha — Quantitative Business Analyst</title>
+<meta property="og:title" content="Shoukat Ali Piracha — Quantitative Business Analyst">
+<meta property="og:description" content="May 2026 graduate. US Citizen (born in the USA). Python · R · SQL · Bloomberg Terminal. Econometric research · DCF/LBO models · Open to North America & UAE.">
+<meta property="og:type" content="website">
+<meta name="description" content="Quantitative Business Analyst candidate, May 2026. US Citizen (born in the USA). CUNY Queens College. Python, R, SQL, Bloomberg. Open to roles across North America and UAE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#040d1a;
+  --bg2:#081628;
+  --bg3:#0c1e38;
+  --bg4:#102548;
+  --green:#00e5a0;
+  --green-dim:#00b87d;
+  --green-bg:rgba(0,229,160,0.07);
+  --green-border:rgba(0,229,160,0.18);
+  --amber:#f5a623;
+  --amber-dim:#c88419;
+  --amber-bg:rgba(245,166,35,0.07);
+  --amber-border:rgba(245,166,35,0.2);
+  --text:#cce0f5;
+  --text2:#8aabcc;
+  --text3:#4d7a9e;
+  --white:#eef6ff;
+  --red:#ff4d6d;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+
+/* GRID BACKGROUND */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(0,229,160,0.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,229,160,0.025) 1px,transparent 1px);
+  background-size:48px 48px;
+}
+
+/* SCANLINE */
+body::after{
+  content:'';position:fixed;inset:0;z-index:998;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 3rem;
+  background:rgba(4,13,26,0.97);
+  border-bottom:1px solid var(--green-border);
+}
+.logo{
+  font-family:'DM Mono',monospace;font-size:0.9rem;
+  color:var(--green);text-decoration:none;letter-spacing:0.12em;font-weight:500;
+}
+.logo span{color:var(--text3)}
+.nav-links{display:flex;gap:1.75rem;list-style:none;align-items:center}
+.nav-links a{
+  font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--text3);
+  text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--green)}
+.nav-resume{
+  font-family:'DM Mono',monospace;font-size:0.65rem;
+  padding:6px 14px;background:transparent;
+  color:var(--green);border:1px solid var(--green-border);
+  text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;
+  transition:background 0.2s;
+}
+.nav-resume:hover{background:var(--green-bg)}
+
+/* TICKER */
+.ticker{
+  background:var(--bg2);border-bottom:1px solid var(--green-border);
+  padding:0.45rem 0;overflow:hidden;position:relative;z-index:99;margin-top:57px;
+}
+.ticker-inner{
+  display:flex;gap:3rem;white-space:nowrap;
+  animation:ticker 28s linear infinite;
+}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.tick-item{
+  font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--text3);
+  display:flex;align-items:center;gap:0.5rem;letter-spacing:0.05em;flex-shrink:0;
+}
+.tick-item .up{color:var(--green)}
+.tick-item .down{color:var(--red)}
+.tick-label{color:var(--text2);font-weight:500}
+
+/* HERO */
+.hero{
+  min-height:calc(100vh - 57px);display:flex;align-items:center;
+  padding:6rem 3rem 5rem;position:relative;overflow:hidden;z-index:1;
+}
+.hero-inner{max-width:960px;margin:0 auto;width:100%;position:relative}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.12em;
+  color:var(--green);text-transform:uppercase;margin-bottom:2rem;
+  border:1px solid var(--green-border);padding:5px 12px;background:var(--green-bg);
+  opacity:0;animation:fu 0.7s 0.1s forwards;
+}
+.live-dot{
+  width:6px;height:6px;border-radius:50%;background:var(--green);
+  animation:blink 1.2s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
+.hero-name{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,7vw,5.8rem);font-weight:600;
+  line-height:1.02;color:var(--white);margin-bottom:0.5rem;
+  opacity:0;animation:fu 0.7s 0.2s forwards;
+}
+.hero-name em{font-style:italic;color:var(--green)}
+.hero-tagline{
+  font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--text3);margin-bottom:2.5rem;margin-top:0.4rem;
+  opacity:0;animation:fu 0.7s 0.3s forwards;
+}
+.hero-bio{
+  font-size:1.05rem;color:var(--text2);max-width:600px;
+  line-height:1.85;margin-bottom:2.75rem;
+  opacity:0;animation:fu 0.7s 0.4s forwards;
+}
+.hero-bio strong{color:var(--green);font-weight:400}
+
+/* DATA CARDS ROW */
+.data-row{
+  display:flex;gap:1px;margin-bottom:3rem;
+  background:var(--green-border);border:1px solid var(--green-border);
+  width:fit-content;
+  opacity:0;animation:fu 0.7s 0.5s forwards;
+}
+.data-card{background:var(--bg2);padding:1rem 1.6rem}
+.data-card+.data-card{border-left:1px solid var(--green-border)}
+.dc-val{
+  font-family:'DM Mono',monospace;font-size:1.75rem;
+  color:var(--green);line-height:1;font-weight:500;
+}
+.dc-label{
+  font-family:'DM Mono',monospace;font-size:0.58rem;
+  color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;margin-top:4px;
+}
+
+/* HERO BTNS */
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fu 0.7s 0.6s forwards}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;padding:0.8rem 1.8rem;
+  background:var(--green);color:var(--bg);
+  font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;
+  text-transform:uppercase;text-decoration:none;font-weight:500;
+  transition:background 0.2s,transform 0.15s;
+}
+.btn-primary:hover{background:#00c887;transform:translateY(-2px)}
+.btn-sec{
+  display:inline-flex;align-items:center;gap:8px;padding:0.8rem 1.8rem;
+  background:transparent;color:var(--text2);
+  font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;
+  text-transform:uppercase;text-decoration:none;
+  border:1px solid rgba(138,171,204,0.25);transition:border-color 0.2s,color 0.2s;
+}
+.btn-sec:hover{border-color:var(--green);color:var(--green)}
+.btn-amber{
+  display:inline-flex;align-items:center;gap:8px;padding:0.8rem 1.8rem;
+  background:var(--amber-bg);color:var(--amber);
+  font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;
+  text-transform:uppercase;text-decoration:none;
+  border:1px solid var(--amber-border);transition:background 0.2s;
+}
+.btn-amber:hover{background:rgba(245,166,35,0.14)}
+
+/* SECTIONS */
+.sec{padding:5rem 3rem;position:relative;z-index:1}
+.sec-dark{background:var(--bg)}
+.sec-mid{background:var(--bg2);border-top:1px solid var(--green-border);border-bottom:1px solid var(--green-border)}
+.si{max-width:960px;margin:0 auto}
+.sec-ey{
+  font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.16em;
+  text-transform:uppercase;color:var(--green);margin-bottom:0.5rem;
+}
+.sec-heading{
+  font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.7rem);
+  font-weight:600;line-height:1.15;color:var(--white);margin-bottom:3rem;
+}
+.sec-heading span{font-style:italic;color:var(--green)}
+
+/* EDUCATION */
+.edu-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.edu-school-block{
+  border-left:2px solid var(--green);padding-left:1.5rem;
+}
+.edu-deg{
+  font-family:'Playfair Display',serif;font-size:1.45rem;
+  color:var(--white);margin-bottom:0.3rem;line-height:1.25;
+}
+.edu-school{font-family:'DM Mono',monospace;font-size:0.8rem;color:var(--green);letter-spacing:0.04em;margin-bottom:0.3rem}
+.edu-meta{font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--text3);letter-spacing:0.05em}
+.course-head{
+  font-family:'DM Mono',monospace;font-size:0.63rem;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--text3);margin-bottom:0.75rem;
+}
+.courses{display:flex;flex-wrap:wrap;gap:6px}
+.course-tag{
+  font-family:'DM Mono',monospace;font-size:0.62rem;padding:4px 10px;
+  border:1px solid var(--green-border);color:var(--text3);
+  background:var(--green-bg);letter-spacing:0.04em;
+}
+
+/* SKILLS - FIXED */
+.skills-table{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--green-border)}
+.sk-cell{
+  background:var(--bg2);padding:1.35rem 1.5rem;
+  transition:background 0.2s;
+}
+.sk-cell:hover{background:var(--bg3)}
+.sk-cell-title{
+  font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--green);margin-bottom:0.85rem;
+  padding-bottom:0.5rem;border-bottom:1px solid var(--green-border);
+}
+.sk-items{display:flex;flex-direction:column;gap:0.3rem}
+.sk-item{
+  font-family:'DM Mono',monospace;font-size:0.72rem;
+  color:var(--text2);display:flex;align-items:center;gap:0.5rem;
+}
+.sk-item::before{content:'>';color:var(--green);font-size:0.65rem}
+.sk-item.core{color:var(--white)}
+.sk-item.core::before{color:var(--green);content:'>>'}
+
+/* RESEARCH */
+.research-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--green-border);border:1px solid var(--green-border)}
+.r-featured{
+  background:var(--bg3);padding:2.5rem;
+  border-top:2px solid var(--green);position:relative;overflow:hidden;
+}
+.r-featured::before{
+  content:'RESEARCH';position:absolute;right:-20px;top:50%;transform:translateY(-50%) rotate(90deg);
+  font-family:'DM Mono',monospace;font-size:5rem;color:rgba(0,229,160,0.03);
+  font-weight:500;letter-spacing:0.3em;white-space:nowrap;
+}
+.r-small-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--green-border)}
+.r-card{background:var(--bg2);padding:2rem;position:relative;overflow:hidden;transition:background 0.2s}
+.r-card:hover{background:var(--bg3)}
+.r-card::before{content:'';position:absolute;top:0;left:0;width:0;height:2px;background:var(--green);transition:width 0.35s}
+.r-card:hover::before{width:100%}
+.r-badge{
+  display:inline-block;font-family:'DM Mono',monospace;font-size:0.58rem;
+  padding:3px 9px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.85rem;
+}
+.r-badge.live{background:rgba(0,229,160,0.08);color:var(--green);border:1px solid var(--green-border)}
+.r-badge.proj{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-border)}
+.r-badge.ind{background:rgba(138,171,204,0.06);color:var(--text3);border:1px solid rgba(138,171,204,0.15)}
+.r-num{
+  font-family:'DM Mono',monospace;font-size:3rem;
+  color:rgba(0,229,160,0.08);line-height:1;margin-bottom:0.75rem;font-weight:500;
+}
+.r-title{
+  font-family:'Playfair Display',serif;font-size:1.35rem;
+  color:var(--white);margin-bottom:0.3rem;line-height:1.3;
+}
+.r-card .r-title{font-size:1.05rem}
+.r-ctx{
+  font-family:'DM Mono',monospace;font-size:0.62rem;color:var(--green);
+  letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1rem;
+}
+.r-body{font-size:0.87rem;color:var(--text2);line-height:1.78;margin-bottom:1.25rem}
+.r-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1.25rem}
+.r-tag{
+  font-family:'DM Mono',monospace;font-size:0.6rem;padding:3px 8px;
+  border:1px solid var(--green-border);color:var(--text3);letter-spacing:0.04em;
+}
+.insights-box{
+  border:1px solid var(--green-border);background:rgba(0,229,160,0.04);
+  padding:1.2rem 1.4rem;
+}
+.insights-head{
+  font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--green);margin-bottom:0.85rem;
+}
+.insight{display:flex;gap:0.6rem;margin-bottom:0.45rem}
+.insight:last-child{margin-bottom:0}
+.i-icon{color:var(--green);font-size:0.7rem;margin-top:0.15rem;flex-shrink:0;font-family:'DM Mono',monospace}
+.i-txt{font-size:0.84rem;color:var(--text2);line-height:1.55}
+.i-txt strong{color:var(--green);font-weight:400}
+
+/* EXPERIENCE */
+.exp-group-label{
+  font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--green);padding-bottom:0.5rem;
+  border-bottom:1px solid var(--green-border);margin-bottom:0;margin-top:2rem;
+}
+.exp-group-label:first-child{margin-top:0}
+.exp-item{
+  display:grid;grid-template-columns:210px 1fr;gap:2rem;
+  padding:2rem 0;border-bottom:1px solid rgba(0,229,160,0.06);
+}
+.exp-item:last-child{border-bottom:none}
+.exp-meta-date{
+  font-family:'DM Mono',monospace;font-size:0.65rem;
+  color:var(--green);letter-spacing:0.06em;margin-bottom:0.3rem;
+}
+.exp-meta-co{
+  font-size:0.82rem;color:var(--text3);line-height:1.5;margin-bottom:6px;
+}
+.exp-tag{
+  display:inline-block;font-family:'DM Mono',monospace;font-size:0.56rem;
+  padding:2px 8px;letter-spacing:0.08em;text-transform:uppercase;
+}
+.exp-tag.intern{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)}
+.exp-tag.part{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-border)}
+.exp-role{
+  font-family:'Playfair Display',serif;font-size:1.05rem;
+  color:var(--white);margin-bottom:0.65rem;line-height:1.3;
+}
+.exp-bul{list-style:none;display:flex;flex-direction:column;gap:0.35rem}
+.exp-bul li{
+  font-size:0.86rem;color:var(--text2);line-height:1.6;
+  padding-left:1.1rem;position:relative;
+}
+.exp-bul li::before{
+  content:'>';position:absolute;left:0;
+  color:var(--green);font-family:'DM Mono',monospace;font-size:0.7rem;
+}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.contact-status{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--green);
+  border:1px solid var(--green-border);padding:5px 12px;background:var(--green-bg);
+  margin-bottom:1.5rem;
+}
+.contact-headline{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--white);
+  line-height:1.25;margin-bottom:1rem;
+}
+.contact-sub{font-size:0.9rem;color:var(--text2);margin-bottom:1.75rem;line-height:1.7}
+.roles{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.5rem}
+.role-line{
+  font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--text2);
+  display:flex;align-items:center;gap:0.6rem;letter-spacing:0.04em;
+}
+.role-line::before{content:'//';color:var(--green);font-size:0.65rem}
+.na-box{
+  font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--text3);
+  line-height:1.6;padding:0.9rem 1.1rem;
+  border:1px solid var(--green-border);background:var(--green-bg);
+}
+.na-box strong{color:var(--green);font-weight:400}
+.clinks{display:flex;flex-direction:column;gap:0.75rem}
+.clink{
+  display:flex;align-items:center;gap:0.75rem;
+  text-decoration:none;color:var(--text2);font-size:0.88rem;
+  transition:color 0.2s;border-bottom:1px solid rgba(0,229,160,0.06);
+  padding-bottom:0.75rem;
+}
+.clink:last-child{border-bottom:none}
+.clink:hover{color:var(--green)}
+.cl{
+  font-family:'DM Mono',monospace;font-size:0.6rem;color:var(--green);
+  letter-spacing:0.1em;text-transform:uppercase;min-width:72px;
+}
+.resume-link{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:1.25rem;padding:0.75rem 1.25rem;
+  background:var(--amber-bg);color:var(--amber);
+  font-family:'DM Mono',monospace;font-size:0.68rem;
+  letter-spacing:0.09em;text-transform:uppercase;text-decoration:none;
+  border:1px solid var(--amber-border);transition:background 0.2s;
+}
+.resume-link:hover{background:rgba(245,166,35,0.14)}
+
+footer{
+  background:#020810;padding:1.75rem 3rem;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1rem;
+  border-top:1px solid var(--green-border);
+  position:relative;z-index:1;
+}
+.footer-logo{font-family:'DM Mono',monospace;color:var(--green);font-size:0.82rem;letter-spacing:0.1em}
+.footer-text{font-family:'DM Mono',monospace;font-size:0.6rem;color:var(--text3);letter-spacing:0.06em}
+
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(20px);transition:opacity 0.65s ease,transform 0.65s ease}
+.rv.on{opacity:1;transform:none}
+
+@media(max-width:720px){
+  nav{padding:1rem 1.5rem}.nav-links{display:none}
+  .hero{padding:5rem 1.5rem 4rem}
+  .sec{padding:4rem 1.5rem}
+  .skills-table{grid-template-columns:1fr 1fr}
+  .edu-wrap,.r-small-grid,.contact-grid{grid-template-columns:1fr}
+  .exp-item{grid-template-columns:1fr;gap:0.4rem}
+  .data-row{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">SAP<span>://portfolio</span></a>
+  <ul class="nav-links">
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="Shoukat_Ali_Piracha_Resume.pdf" target="_blank" class="nav-resume">Resume ↗</a></li>
+  </ul>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="tick-item"><span class="tick-label">PYTHON</span> <span class="up">PROFICIENT</span></span>
+    <span class="tick-item"><span class="tick-label">R</span> <span class="up">ECONOMETRICS</span></span>
+    <span class="tick-item"><span class="tick-label">SQL</span> <span class="up">ADVANCED</span></span>
+    <span class="tick-item"><span class="tick-label">BLOOMBERG</span> <span class="up">CERTIFIED</span></span>
+    <span class="tick-item"><span class="tick-label">DCF / LBO</span> <span class="up">50+ ASSETS</span></span>
+    <span class="tick-item"><span class="tick-label">DiD MODEL</span> <span class="up">R² ~35%</span></span>
+    <span class="tick-item"><span class="tick-label">OLS REGRESSION</span> <span class="up">65K+ RECORDS</span></span>
+    <span class="tick-item"><span class="tick-label">POWER BI</span> <span class="up">30% EFFICIENCY GAIN</span></span>
+    <span class="tick-item"><span class="tick-label">WAGE PREMIUM</span> <span class="up">~8–12% FINDING</span></span>
+    <span class="tick-item"><span class="tick-label">WORK AUTH</span> <span class="up">US CITIZEN — BORN IN USA</span></span>
+    <span class="tick-item"><span class="tick-label">OPEN TO</span> <span class="up">NORTH AMERICA &amp; UAE</span></span>
+    <span class="tick-item"><span class="tick-label">START DATE</span> <span class="up">MAY 2026</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="tick-item"><span class="tick-label">PYTHON</span> <span class="up">PROFICIENT</span></span>
+    <span class="tick-item"><span class="tick-label">R</span> <span class="up">ECONOMETRICS</span></span>
+    <span class="tick-item"><span class="tick-label">SQL</span> <span class="up">ADVANCED</span></span>
+    <span class="tick-item"><span class="tick-label">BLOOMBERG</span> <span class="up">CERTIFIED</span></span>
+    <span class="tick-item"><span class="tick-label">DCF / LBO</span> <span class="up">50+ ASSETS</span></span>
+    <span class="tick-item"><span class="tick-label">DiD MODEL</span> <span class="up">R² ~35%</span></span>
+    <span class="tick-item"><span class="tick-label">OLS REGRESSION</span> <span class="up">65K+ RECORDS</span></span>
+    <span class="tick-item"><span class="tick-label">POWER BI</span> <span class="up">30% EFFICIENCY GAIN</span></span>
+    <span class="tick-item"><span class="tick-label">WAGE PREMIUM</span> <span class="up">~8–12% FINDING</span></span>
+    <span class="tick-item"><span class="tick-label">WORK AUTH</span> <span class="up">US CITIZEN — BORN IN USA</span></span>
+    <span class="tick-item"><span class="tick-label">OPEN TO</span> <span class="up">NORTH AMERICA &amp; UAE</span></span>
+    <span class="tick-item"><span class="tick-label">START DATE</span> <span class="up">MAY 2026</span></span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="live-dot"></span>US Citizen (born in USA) &nbsp;·&nbsp; Open to North America & UAE &nbsp;·&nbsp; May 2026</div>
+    <h1 class="hero-name">Shoukat Ali <em>Piracha</em></h1>
+    <div class="hero-tagline">Quantitative Business Analyst &nbsp;·&nbsp; BS Economics &nbsp;·&nbsp; CUNY Queens College</div>
+    <p class="hero-bio">I turn messy financial and operational data into decisions that move businesses. From <strong>DCF/LBO valuation models across 50+ assets</strong> to <strong>difference-in-differences econometric research on 65,000+ wage records</strong> — I work at the intersection of quantitative finance, data analytics, and business strategy.</p>
+    <div class="data-row">
+      <div class="data-card"><div class="dc-val">4</div><div class="dc-label">Internships</div></div>
+      <div class="data-card"><div class="dc-val">65K+</div><div class="dc-label">Records Analyzed</div></div>
+      <div class="data-card"><div class="dc-val">200+</div><div class="dc-label">Client Companies</div></div>
+      <div class="data-card"><div class="dc-val">3</div><div class="dc-label">Research Projects</div></div>
+    </div>
+    <div class="hero-btns">
+      <a href="mailto:Shoukatpiracha3@gmail.com" class="btn-primary">Get in touch</a>
+      <a href="https://linkedin.com/in/ShoukatAliPiracha" target="_blank" class="btn-sec">LinkedIn ↗</a>
+      <a href="Shoukat_Ali_Piracha_Resume.pdf" target="_blank" class="btn-amber">View Resume ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="sec sec-mid" id="education">
+  <div class="si">
+    <div class="sec-ey rv">Academic Background</div>
+    <h2 class="sec-heading rv">Education</h2>
+    <div class="edu-wrap rv">
+      <div class="edu-school-block">
+        <div class="edu-deg">BS Quantitative Economics</div>
+        <div class="edu-school">CUNY Queens College</div>
+        <div class="edu-meta">Expected May 2026 &nbsp;·&nbsp; Queens, New York</div>
+      </div>
+      <div>
+        <div class="course-head">Relevant Coursework</div>
+        <div class="courses">
+          <span class="course-tag">Econometrics</span>
+          <span class="course-tag">Statistical Modeling</span>
+          <span class="course-tag">Quantitative Methods</span>
+          <span class="course-tag">Financial Economics</span>
+          <span class="course-tag">Data Analysis</span>
+          <span class="course-tag">Linear Algebra</span>
+          <span class="course-tag">Honors Seminar</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="sec sec-dark" id="skills">
+  <div class="si">
+    <div class="sec-ey rv">Capabilities</div>
+    <h2 class="sec-heading rv">Technical <span>skills</span></h2>
+    <div class="skills-table rv">
+
+      <div class="sk-cell">
+        <div class="sk-cell-title">Programming & Data</div>
+        <div class="sk-items">
+          <span class="sk-item core">Python</span>
+          <span class="sk-item core">R</span>
+          <span class="sk-item core">SQL</span>
+          <span class="sk-item">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="sk-cell">
+        <div class="sk-cell-title">Visualization & BI</div>
+        <div class="sk-items">
+          <span class="sk-item core">Power BI</span>
+          <span class="sk-item core">Tableau</span>
+          <span class="sk-item">Excel Advanced</span>
+          <span class="sk-item">ggplot2</span>
+        </div>
+      </div>
+
+      <div class="sk-cell">
+        <div class="sk-cell-title">Financial Tools</div>
+        <div class="sk-items">
+          <span class="sk-item core">Bloomberg Terminal</span>
+          <span class="sk-item core">DCF Modeling</span>
+          <span class="sk-item core">LBO Modeling</span>
+          <span class="sk-item">Comparable Analysis</span>
+        </div>
+      </div>
+
+      <div class="sk-cell">
+        <div class="sk-cell-title">Analytical Methods</div>
+        <div class="sk-items">
+          <span class="sk-item core">OLS Regression</span>
+          <span class="sk-item core">Diff-in-Differences</span>
+          <span class="sk-item">Fixed Effects</span>
+          <span class="sk-item">Panel Data</span>
+          <span class="sk-item">Forecasting</span>
+        </div>
+      </div>
+
+      <div class="sk-cell">
+        <div class="sk-cell-title">BA Competencies</div>
+        <div class="sk-items">
+          <span class="sk-item">KPI Design</span>
+          <span class="sk-item">Process Mapping</span>
+          <span class="sk-item">Variance Analysis</span>
+          <span class="sk-item">Requirements Gathering</span>
+          <span class="sk-item">Stakeholder Reporting</span>
+        </div>
+      </div>
+
+      <div class="sk-cell">
+        <div class="sk-cell-title">Additional</div>
+        <div class="sk-items">
+          <span class="sk-item">Point of Sale (POS)</span>
+          <span class="sk-item">FIFO Inventory Mgmt</span>
+          <span class="sk-item">Budget Analysis</span>
+          <span class="sk-item">Team Collaboration</span>
+          <span class="sk-item">Financial Management</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="sec sec-mid" id="research">
+  <div class="si">
+    <div class="sec-ey rv">Quantitative Work</div>
+    <h2 class="sec-heading rv">Research & <span>projects</span></h2>
+    <div class="research-grid rv">
+
+      <!-- Flagship -->
+      <div class="r-featured">
+        <div class="r-badge live">Honors Research Paper &nbsp;·&nbsp; In Progress</div>
+        <div class="r-num">01</div>
+        <div class="r-title">Remote Work &amp; Wage Growth: A Post-COVID Econometric Analysis</div>
+        <div class="r-ctx">ECON 392W &nbsp;·&nbsp; R &nbsp;·&nbsp; Difference-in-Differences &nbsp;·&nbsp; BLS OEWS Data</div>
+        <div class="r-body">Built an original econometric study quantifying the causal impact of remote work eligibility on wage trajectories across U.S. metro areas. Applied a difference-in-differences framework to Bureau of Labor Statistics OEWS data — the same analytical approach used by consulting firms to evaluate policy and market shifts. Analyzed 65,000+ annual mean wage records, controlling for occupation and metro-area fixed effects to isolate the treatment effect of remote eligibility on post-COVID wage growth.</div>
+        <div class="r-tags">
+          <span class="r-tag">R</span><span class="r-tag">Econometrics</span><span class="r-tag">Diff-in-Differences</span><span class="r-tag">BLS OEWS</span><span class="r-tag">Fixed Effects</span><span class="r-tag">Causal Inference</span><span class="r-tag">Statistical Modeling</span>
+        </div>
+        <div class="insights-box">
+          <div class="insights-head">// Key findings</div>
+          <div class="insight"><span class="i-icon">&#8599;</span><span class="i-txt">Identified a statistically significant wage premium of <strong>~8–12%</strong> for remote-eligible occupations post-COVID</span></div>
+          <div class="insight"><span class="i-icon">&#8599;</span><span class="i-txt">Model explained <strong>~35% of wage variance</strong> after controlling for metro-area and occupation fixed effects</span></div>
+          <div class="insight"><span class="i-icon">&#8599;</span><span class="i-txt">Findings applicable to <strong>compensation benchmarking and labor market strategy</strong> for firms across 50+ metro areas</span></div>
+        </div>
+      </div>
+
+      <div class="r-small-grid">
+        <div class="r-card">
+          <div class="r-badge proj">Data Analysis Project</div>
+          <div class="r-num">02</div>
+          <div class="r-title">CPS Wage Determinants Study</div>
+          <div class="r-ctx">ECON 382 &nbsp;·&nbsp; R &nbsp;·&nbsp; OLS Regression</div>
+          <div class="r-body">Cleaned 65,000+ CPS microdata records in R. Applied OLS and heteroskedasticity-robust regression models explaining 30–40% of wage variation. Identified education and region as primary drivers across 6 model specifications. Visualized with ggplot2.</div>
+          <div class="r-tags"><span class="r-tag">R</span><span class="r-tag">OLS</span><span class="r-tag">Robust SE</span><span class="r-tag">ggplot2</span><span class="r-tag">CPS Microdata</span></div>
+        </div>
+
+        <div class="r-card">
+          <div class="r-badge ind">Quantitative Research</div>
+          <div class="r-num">03</div>
+          <div class="r-title">Returns to Education in NYC Labor Markets</div>
+          <div class="r-ctx">Independent &nbsp;·&nbsp; Python & R &nbsp;·&nbsp; ACS PUMS</div>
+          <div class="r-body">Investigated the education wage premium across NYC boroughs (12,000+ records, 5 industries). Applied Mincer earnings equations with borough fixed effects. Found an 18–24% premium for bachelor's holders — widest in finance, narrowest in retail.</div>
+          <div class="r-tags"><span class="r-tag">Python</span><span class="r-tag">R</span><span class="r-tag">ACS PUMS</span><span class="r-tag">Mincer Eq.</span><span class="r-tag">Fixed Effects</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="sec sec-dark" id="experience">
+  <div class="si">
+    <div class="sec-ey rv">Career History</div>
+    <h2 class="sec-heading rv">Experience</h2>
+    <div class="rv">
+
+      <div class="exp-group-label">// Internships</div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-meta-date">Aug 2025 – Oct 2025</div>
+          <div class="exp-meta-co">Kassam Trading Company<br>Queens, New York</div>
+          <span class="exp-tag intern">Internship</span>
+        </div>
+        <div>
+          <div class="exp-role">Financial &amp; Business Analyst Intern</div>
+          <ul class="exp-bul">
+            <li>Built 5+ Python/SQL valuation models (DCF, LBO, comps) across 50+ assets, cutting ad-hoc turnaround from 2 days to same-day delivery</li>
+            <li>Designed Power BI dashboards consolidating 40+ Bloomberg market feeds, reducing analyst prep time 30% for 200+ monthly client pricing decisions</li>
+            <li>Assessed compliance risk for 50+ products against regulatory standards; delivered reports with zero flags across all submissions</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-meta-date">Mar 2025 – May 2025</div>
+          <div class="exp-meta-co">Runwei<br>Queens, New York</div>
+          <span class="exp-tag intern">Internship</span>
+        </div>
+        <div>
+          <div class="exp-role">Business Development &amp; Operations Intern</div>
+          <ul class="exp-bul">
+            <li>Grew qualified client leads by 25% through market segmentation and AI-driven outreach across key segments</li>
+            <li>Built performance dashboards tracking 10+ KPIs across 3 business units, contributing to a 20% improvement in operational efficiency</li>
+            <li>Secured engagement from 15+ partner organizations through competitive analysis and tailored pitch materials</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-meta-date">Jul 2024 – Aug 2024</div>
+          <div class="exp-meta-co">ArteEast<br>Queens, New York</div>
+          <span class="exp-tag intern">Internship</span>
+        </div>
+        <div>
+          <div class="exp-role">Marketing Analytics Intern</div>
+          <ul class="exp-bul">
+            <li>Unified 3 years of attendee survey data (1,000+ responses, 2022–2024) into a structured Excel model, enabling cross-year trend analysis for the first time</li>
+            <li>Identified that 50% of attendees discovered the program via social media and 62% reported positive experiences — insights that directly shaped the 2025 marketing strategy</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-meta-date">Aug 2021 – Sep 2021</div>
+          <div class="exp-meta-co">Team Management League<br>Karachi, Pakistan</div>
+          <span class="exp-tag intern">Internship</span>
+        </div>
+        <div>
+          <div class="exp-role">Business Assistant</div>
+          <ul class="exp-bul">
+            <li>Collaborated with a team of 5+ to tally budgets for 3+ departments, optimizing company finances through structured analysis</li>
+            <li>Streamlined administrative workflows including team meetings, mailing systems, and scheduling, increasing company productivity by 24%</li>
+            <li>Developed professional communication and self-marketing skills in a business environment</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-group-label">// Other Experience</div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-meta-date">Nov 2025 – Jan 2026</div>
+          <div class="exp-meta-co">Macy's<br>Queens, New York</div>
+        </div>
+        <div>
+          <div class="exp-role">Operations &amp; Analytics Associate</div>
+          <ul class="exp-bul">
+            <li>Analyzed daily POS data across 200+ SKUs, surfacing 3 demand gaps that improved replenishment accuracy by ~15%</li>
+            <li>Tracked $3,000 daily sales targets and surfaced shortfall root causes to floor management in real time</li>
+            <li>Process-mapped restocking workflows for 200+ products, reducing shelf-gap duration by an estimated 20%</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-meta-date">Oct 2024 – May 2025</div>
+          <div class="exp-meta-co">Burlington Stores, Inc.<br>Queens, New York</div>
+          <span class="exp-tag part">Part-time</span>
+        </div>
+        <div>
+          <div class="exp-role">Retail Operations Analyst</div>
+          <ul class="exp-bul">
+            <li>Achieved top-tier customer service ratings, ranking in the top 5% of 200 cashiers through fast checkout and personal assistance</li>
+            <li>Enhanced store operations by restocking 100+ items per shift, improving product visibility and customer satisfaction by 15%</li>
+            <li>Supervised fitting rooms across 20+ try-ons per shift, ensuring cleanliness and providing styling assistance</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-meta-date">Jan 2022 – Jun 2024</div>
+          <div class="exp-meta-co">Key Food Marketplace<br>Queens, New York</div>
+        </div>
+        <div>
+          <div class="exp-role">Team Lead — Operations</div>
+          <ul class="exp-bul">
+            <li>Led daily operations for 20+ person team; improved customer satisfaction 35% and grew department sales 17% through optimized FIFO inventory tracking</li>
+            <li>Reconciled POS cash records daily — 100% audit accuracy with zero discrepancies over 2.5 years</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec sec-mid" id="contact">
+  <div class="si">
+    <div class="contact-grid">
+      <div>
+        <div class="contact-status rv"><span class="live-dot"></span>Open to hire — North America & UAE</div>
+        <h2 class="contact-headline rv">Let's build<br>something together</h2>
+        <p class="contact-sub rv">Actively seeking full-time analyst roles starting May 2026. Open to opportunities across the USA, Canada, and the UAE — willing to relocate immediately.</p>
+        <div class="roles rv">
+          <div class="role-line">Business Analyst</div>
+          <div class="role-line">Financial Analyst</div>
+          <div class="role-line">Operations Analyst</div>
+          <div class="role-line">Strategy Analyst</div>
+        </div>
+        <div class="na-box rv"><strong>// US Citizen (born in the USA) — no sponsorship required</strong><br>USA &nbsp;·&nbsp; Canada &nbsp;·&nbsp; UAE &nbsp;·&nbsp; Remote &nbsp;·&nbsp; Willing to relocate immediately</div>
+        <a href="Shoukat_Ali_Piracha_Resume.pdf" target="_blank" class="resume-link rv">&#8595; Download Resume (PDF)</a>
+      </div>
+      <div class="clinks rv">
+        <a href="mailto:Shoukatpiracha3@gmail.com" class="clink"><span class="cl">Email</span>Shoukatpiracha3@gmail.com</a>
+        <a href="tel:9293934759" class="clink"><span class="cl">Phone</span>929-393-4759</a>
+        <a href="https://linkedin.com/in/ShoukatAliPiracha" target="_blank" class="clink"><span class="cl">LinkedIn</span>linkedin.com/in/ShoukatAliPiracha</a>
+        <div class="clink"><span class="cl">Based In</span>Queens, New York</div>
+        <div class="clink"><span class="cl">Open To</span>USA · Canada · UAE</div>
+        <div class="clink"><span class="cl">Work Auth</span>US Citizen (born in the USA)</div>
+        <div class="clink"><span class="cl">Graduation</span>May 2026</div>
+        <div class="clink"><span class="cl">Degree</span>BS Quantitative Economics</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">SAP://portfolio</span>
+  <span class="footer-text">&copy; 2026 Shoukat Ali Piracha &nbsp;·&nbsp; CUNY Queens College &nbsp;·&nbsp; US Citizen &nbsp;·&nbsp; Open to North America & UAE</span>
+  <span class="footer-text">BS Quantitative Economics · May 2026</span>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}});
+},{threshold:0.07,rootMargin:'0px 0px -28px 0px'});
+document.querySelectorAll('.rv').forEach((el,i)=>{
+  el.style.transitionDelay=(i%4)*0.08+'s';
+  obs.observe(el);
+});
+</script>
+</body>
+</html>
