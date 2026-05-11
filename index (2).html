@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Quantitative Business Analyst candidate, May 2026. US Citizen (born in the USA). CUNY Queens College. Python, R, SQL, MATLAB. Open to roles across North America.">
+  <meta property="og:title" content="Shoukat Ali Piracha — Quantitative Business Analyst">
+  <meta property="og:description" content="May 2026 graduate. US Citizen (born in the USA). Python · R · SQL · MATLAB · Bloomberg Terminal. Econometric research · Financial Modeling · Open to North America.">
+  <meta property="og:type" content="website">
+  <title>Shoukat Ali Piracha — Quantitative Business Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:          #020810;
+      --surface:     #071020;
+      --surface2:    #0c1a2e;
+      --border:      #1a2d4a;
+      --border2:     #0f1e33;
+      --green:       #22d46a;
+      --green-dim:   #16a34a;
+      --green-glow:  rgba(34,212,106,0.12);
+      --text:        #dde6f0;
+      --text-muted:  #5a7a9a;
+      --text-dim:    #8aaac0;
+      --red:         #f87171;
+      --mono: "DM Mono", "Courier New", monospace;
+      --sans: "DM Sans", sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 14px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── SCROLLBAR ─────────────────────────── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    /* ── NAV ───────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(2,8,16,0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      display: flex; align-items: center;
+      justify-content: space-between;
+      padding: 0 32px; height: 52px;
+    }
+    .nav-logo {
+      font-family: var(--mono); font-weight: 500; font-size: 13px;
+      color: var(--green); letter-spacing: .04em; text-decoration: none;
+    }
+    .nav-logo span { color: var(--text-muted); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-size: 12px; color: var(--text-muted); text-decoration: none;
+      letter-spacing: .06em; transition: color .18s; font-weight: 400;
+    }
+    .nav-links a:hover { color: var(--green); }
+    .nav-resume a {
+      font-size: 12px; color: var(--green); text-decoration: none;
+      border: 1px solid var(--green-dim); padding: 5px 14px;
+      letter-spacing: .06em; transition: background .18s;
+    }
+    .nav-resume a:hover { background: var(--green-glow); }
+
+    /* ── TICKER ────────────────────────────── */
+    .ticker-wrap {
+      position: fixed; top: 52px; left: 0; right: 0; z-index: 190;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      overflow: hidden; height: 28px; display: flex; align-items: center;
+    }
+    .ticker-track {
+      display: flex; gap: 0; white-space: nowrap;
+      animation: ticker 60s linear infinite;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ticker-item {
+      display: inline-flex; align-items: center; gap: 20px;
+      padding: 0 24px; font-size: 10px; letter-spacing: .1em;
+      color: var(--green); font-weight: 500;
+    }
+    .ticker-item .sep { color: var(--border); }
+
+    /* ── MAIN ──────────────────────────────── */
+    main { padding-top: 80px; }
+
+    /* ── HERO ──────────────────────────────── */
+    .hero {
+      padding: 72px 64px 80px;
+      border-bottom: 1px solid var(--border);
+      max-width: 1200px; margin: 0 auto;
+    }
+    .hero-label {
+      font-size: 10px; letter-spacing: .18em; color: var(--text-muted);
+      margin-bottom: 24px; text-transform: uppercase;
+    }
+    .hero-label span { color: var(--green); }
+    .hero-name {
+      font-family: var(--sans); font-size: clamp(40px, 5vw, 64px);
+      font-weight: 300; line-height: 1.08; letter-spacing: -.01em;
+      color: var(--text); margin-bottom: 14px;
+    }
+    .hero-name em { font-style: italic; color: var(--green); }
+    .hero-sub {
+      font-size: 12px; letter-spacing: .1em; color: var(--text-muted);
+      margin-bottom: 36px; text-transform: uppercase;
+    }
+    .hero-desc {
+      font-family: var(--sans); font-size: 15px; line-height: 1.8;
+      color: var(--text-dim); max-width: 680px; margin-bottom: 48px;
+    }
+    .hero-desc strong { color: var(--green); font-weight: 500; }
+
+    /* STATS */
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); margin-bottom: 48px;
+    }
+    .stat-cell {
+      background: var(--surface); padding: 20px 24px;
+    }
+    .stat-num {
+      font-family: var(--mono); font-size: 28px; font-weight: 500;
+      color: var(--green); line-height: 1; margin-bottom: 6px;
+      letter-spacing: -.02em;
+    }
+    .stat-label { font-size: 10px; color: var(--text-muted); letter-spacing: .1em; text-transform: uppercase; }
+
+    /* CTA BUTTONS */
+    .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn {
+      font-family: var(--mono); font-size: 12px; letter-spacing: .08em;
+      padding: 10px 22px; text-decoration: none; cursor: pointer;
+      transition: all .18s; border: 1px solid; display: inline-block;
+    }
+    .btn-primary { color: var(--bg); background: var(--green); border-color: var(--green); }
+    .btn-primary:hover { background: transparent; color: var(--green); }
+    .btn-ghost { color: var(--text-dim); background: transparent; border-color: var(--border); }
+    .btn-ghost:hover { border-color: var(--green); color: var(--green); }
+
+    /* ── SECTIONS ──────────────────────────── */
+    section {
+      max-width: 1200px; margin: 0 auto;
+      padding: 80px 64px; border-bottom: 1px solid var(--border);
+    }
+    section:last-of-type { border-bottom: none; }
+
+    .section-header {
+      display: flex; align-items: baseline; gap: 16px; margin-bottom: 56px;
+    }
+    .section-num { font-size: 11px; color: var(--text-muted); letter-spacing: .12em; }
+    .section-title {
+      font-family: var(--sans); font-size: clamp(22px, 3vw, 30px);
+      font-weight: 300; color: var(--text); letter-spacing: -.01em;
+    }
+    .section-label {
+      font-size: 10px; letter-spacing: .14em; color: var(--text-muted);
+      text-transform: uppercase; margin-bottom: 8px;
+    }
+
+    /* ── EDUCATION ─────────────────────────── */
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .edu-main {}
+    .edu-degree {
+      font-family: var(--sans); font-size: 22px; font-weight: 400;
+      color: var(--text); margin-bottom: 4px;
+    }
+    .edu-school { font-size: 12px; color: var(--green); margin-bottom: 4px; letter-spacing: .04em; }
+    .edu-meta { font-size: 11px; color: var(--text-muted); margin-bottom: 28px; }
+    .edu-honors {
+      background: var(--surface); border: 1px solid var(--border);
+      border-left: 2px solid var(--green); padding: 14px 18px;
+      font-size: 12px; color: var(--text-dim); margin-bottom: 12px;
+    }
+    .edu-honors strong { color: var(--green); font-weight: 500; }
+    .coursework-label { font-size: 10px; letter-spacing: .12em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 12px; margin-top: 28px; }
+    .course-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .course-tag {
+      font-size: 11px; color: var(--text-dim); border: 1px solid var(--border2);
+      padding: 4px 10px; background: var(--surface);
+    }
+
+    /* ── SKILLS ────────────────────────────── */
+    .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    .skill-block {
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 24px 24px 20px;
+    }
+    .skill-block-title {
+      font-size: 10px; letter-spacing: .14em; color: var(--green);
+      text-transform: uppercase; margin-bottom: 16px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag {
+      font-size: 11px; color: var(--text-dim);
+      border: 1px solid var(--border2); padding: 5px 12px;
+      transition: all .18s;
+    }
+    .skill-tag:hover { border-color: var(--green-dim); color: var(--green); }
+
+    /* ── RESEARCH ──────────────────────────── */
+    .research-item {
+      margin-bottom: 56px; padding-bottom: 56px;
+      border-bottom: 1px solid var(--border2);
+    }
+    .research-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .research-badge {
+      font-size: 9px; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--text-muted); border: 1px solid var(--border);
+      padding: 3px 10px; display: inline-block; margin-bottom: 14px;
+    }
+    .research-num { font-size: 32px; color: var(--border); font-weight: 500; margin-bottom: 12px; }
+    .research-title {
+      font-family: var(--sans); font-size: 20px; font-weight: 400;
+      color: var(--text); margin-bottom: 4px; line-height: 1.3;
+    }
+    .research-meta { font-size: 11px; color: var(--text-muted); margin-bottom: 20px; letter-spacing: .04em; }
+    .research-desc { font-size: 13px; line-height: 1.8; color: var(--text-dim); max-width: 700px; margin-bottom: 20px; }
+    .research-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
+    .research-tag {
+      font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-muted); background: var(--surface);
+      border: 1px solid var(--border2); padding: 3px 9px;
+    }
+    .research-bullets { list-style: none; }
+    .research-bullets li {
+      font-size: 13px; color: var(--text-dim); padding: 6px 0;
+      padding-left: 20px; position: relative; line-height: 1.6;
+    }
+    .research-bullets li::before { content: "●"; position: absolute; left: 0; color: var(--green); font-size: 8px; top: 9px; }
+
+    /* ── EXPERIENCE ────────────────────────── */
+    .exp-group-label {
+      font-size: 11px; letter-spacing: .1em; color: var(--text-muted);
+      margin-bottom: 32px; margin-top: 48px;
+    }
+    .exp-group-label:first-of-type { margin-top: 0; }
+    .exp-item {
+      padding: 36px 0; border-bottom: 1px solid var(--border2);
+      display: grid; grid-template-columns: 200px 1fr; gap: 40px;
+    }
+    .exp-item:last-child { border-bottom: none; }
+    .exp-left { }
+    .exp-date { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; letter-spacing: .04em; }
+    .exp-loc { font-size: 11px; color: var(--text-muted); margin-bottom: 12px; }
+    .exp-badge-small {
+      font-size: 9px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--green-dim); border: 1px solid var(--border);
+      padding: 2px 8px; display: inline-block;
+    }
+    .exp-right { }
+    .exp-title {
+      font-family: var(--sans); font-size: 18px; font-weight: 400;
+      color: var(--text); margin-bottom: 2px;
+    }
+    .exp-co { font-size: 12px; color: var(--green); margin-bottom: 18px; letter-spacing: .04em; }
+    .exp-bullets { list-style: none; }
+    .exp-bullets li {
+      font-size: 13px; color: var(--text-dim); padding: 5px 0;
+      padding-left: 18px; position: relative; line-height: 1.65;
+    }
+    .exp-bullets li::before { content: "●"; position: absolute; left: 0; color: var(--green); font-size: 7px; top: 9px; }
+
+    /* ── CONTACT ───────────────────────────── */
+    .contact-header {
+      font-family: var(--sans); font-size: clamp(28px, 4vw, 44px);
+      font-weight: 300; color: var(--text); line-height: 1.15;
+      margin-bottom: 16px; letter-spacing: -.01em;
+    }
+    .contact-header em { font-style: italic; color: var(--green); }
+    .contact-sub { font-size: 13px; color: var(--text-dim); max-width: 560px; margin-bottom: 40px; line-height: 1.7; }
+    .role-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .role-tag {
+      font-size: 11px; letter-spacing: .08em; color: var(--green);
+      border: 1px solid var(--green-dim); padding: 6px 14px;
+    }
+    .contact-note {
+      font-size: 11px; color: var(--text-muted); margin-bottom: 40px;
+      border-left: 2px solid var(--green-dim); padding-left: 14px;
+    }
+    .contact-note strong { color: var(--green); }
+    .resume-cta {
+      display: inline-block; font-size: 12px; color: var(--bg);
+      background: var(--green); border: 1px solid var(--green);
+      padding: 12px 28px; text-decoration: none; letter-spacing: .08em;
+      margin-bottom: 56px; transition: all .18s;
+    }
+    .resume-cta:hover { background: transparent; color: var(--green); }
+    .contact-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border); border: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .contact-cell { background: var(--surface); padding: 20px 24px; }
+    .contact-cell-label { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+    .contact-cell-val { font-size: 13px; color: var(--text); }
+    .contact-cell-val a { color: var(--text); text-decoration: none; transition: color .18s; }
+    .contact-cell-val a:hover { color: var(--green); }
+    .contact-meta-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 1px; background: var(--border2); border: 1px solid var(--border2);
+    }
+    .contact-meta-cell { background: var(--surface); padding: 14px 18px; }
+    .contact-meta-label { font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
+    .contact-meta-val { font-size: 11px; color: var(--text-dim); }
+
+    /* ── FOOTER ────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 20px 64px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 11px; color: var(--text-muted); letter-spacing: .04em;
+    }
+    footer a { color: var(--text-muted); text-decoration: none; transition: color .18s; }
+    footer a:hover { color: var(--green); }
+
+    /* ── RESPONSIVE ────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 0 20px; }
+      .nav-links { gap: 16px; display: none; }
+      .hero, section { padding: 48px 24px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .edu-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .exp-item { grid-template-columns: 1fr; gap: 8px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-meta-grid { grid-template-columns: repeat(2, 1fr); }
+      footer { flex-direction: column; gap: 8px; padding: 20px 24px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#"><span>SAP://</span>portfolio</a>
+  <ul class="nav-links">
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#activities">Activities</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-resume"><a href="Shoukat_Ali_Piracha_Resume.pdf" target="_blank">Resume ↗</a></div>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item">PYTHON PROFICIENT <span class="sep">·</span> R ECONOMETRICS <span class="sep">·</span> SQL ADVANCED <span class="sep">·</span> MATLAB <span class="sep">·</span> BLOOMBERG CERTIFIED <span class="sep">·</span> FINANCIAL MODELING <span class="sep">·</span> DiD MODEL R² ~35% <span class="sep">·</span> OLS REGRESSION <span class="sep">·</span> 65K+ RECORDS <span class="sep">·</span> POWER BI <span class="sep">·</span> REGRESSION ANALYSIS <span class="sep">·</span> FORECASTING <span class="sep">·</span> WORK AUTH US CITIZEN — BORN IN USA <span class="sep">·</span> OPEN TO NORTH AMERICA &amp; UAE <span class="sep">·</span> START DATE MAY 2026</span>
+    <span class="ticker-item">PYTHON PROFICIENT <span class="sep">·</span> R ECONOMETRICS <span class="sep">·</span> SQL ADVANCED <span class="sep">·</span> MATLAB <span class="sep">·</span> BLOOMBERG CERTIFIED <span class="sep">·</span> FINANCIAL MODELING <span class="sep">·</span> DiD MODEL R² ~35% <span class="sep">·</span> OLS REGRESSION <span class="sep">·</span> 65K+ RECORDS <span class="sep">·</span> POWER BI <span class="sep">·</span> REGRESSION ANALYSIS <span class="sep">·</span> FORECASTING <span class="sep">·</span> WORK AUTH US CITIZEN — BORN IN USA <span class="sep">·</span> OPEN TO NORTH AMERICA &amp; UAE <span class="sep">·</span> START DATE MAY 2026</span>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-label">US Citizen (born in USA) <span>·</span> Open to North America &amp; UAE <span>·</span> May 2026</p>
+  <h1 class="hero-name">Shoukat Ali <em>Piracha</em></h1>
+  <p class="hero-sub">Quantitative Business Analyst · BS Economics · CUNY Queens College</p>
+  <p class="hero-desc">
+    I turn messy financial and operational data into decisions that move businesses. From <strong>valuation models across 50+ financial assets</strong> to <strong>difference-in-differences econometric research on 544,000+ occupation-MSA observations</strong> — I work at the intersection of quantitative finance, data analytics, and business strategy.
+  </p>
+  <div class="stats-grid">
+    <div class="stat-cell">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Internships</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">65K+</div>
+      <div class="stat-label">Records Analyzed</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">200+</div>
+      <div class="stat-label">SKUs Tracked</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">2</div>
+      <div class="stat-label">Research Projects</div>
+    </div>
+  </div>
+  <div class="hero-ctas">
+    <a href="mailto:shoukatpiracha3@gmail.com" class="btn btn-primary">Get in touch</a>
+    <a href="https://linkedin.com/in/ShoukatAliPiracha" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
+    <a href="Shoukat_Ali_Piracha_Resume.pdf" target="_blank" class="btn btn-ghost">View Resume ↗</a>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Education</h2>
+    <span class="section-label">Academic Background</span>
+  </div>
+  <div class="edu-grid">
+    <div class="edu-main">
+      <div class="edu-degree">BS Quantitative Economics</div>
+      <div class="edu-school">CUNY Queens College</div>
+      <div class="edu-meta">Expected May 2026 · Queens, New York</div>
+      <div class="edu-honors"><strong>Honors:</strong> Carole &amp; Norman Barham Family Scholarship</div>
+      <div class="edu-honors"><strong>Dean's List:</strong> Spring 2024, Fall 2025</div>
+      <div class="coursework-label">Relevant Coursework</div>
+      <div class="course-tags">
+        <span class="course-tag">Econometrics</span>
+        <span class="course-tag">Statistical Modeling</span>
+        <span class="course-tag">Quantitative Methods</span>
+        <span class="course-tag">Financial Economics</span>
+        <span class="course-tag">Honors Seminar</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Technical skills</h2>
+    <span class="section-label">Capabilities</span>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-block">
+      <div class="skill-block-title">Programming &amp; Analytics</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">R</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">MATLAB</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title">Visualization &amp; Tools</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">Tableau</span>
+        <span class="skill-tag">Excel (Advanced)</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title">Analytical Skills</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Regression Analysis</span>
+        <span class="skill-tag">Financial Modeling</span>
+        <span class="skill-tag">Forecasting</span>
+        <span class="skill-tag">Econometrics</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title">Certificates</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Google Data Analytics</span>
+        <span class="skill-tag">JPMorgan Forage Excel Simulation</span>
+        <span class="skill-tag">Bloomberg Market Concepts</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Research &amp; projects</h2>
+    <span class="section-label">Quantitative Work</span>
+  </div>
+
+  <div class="research-item">
+    <div class="research-badge">Honors Research Paper · In Progress</div>
+    <div class="research-num">01</div>
+    <div class="research-title">Remote Work and Wage Dynamics Research Paper</div>
+    <div class="research-meta">Python, PanelOLS, Econometrics</div>
+    <div class="research-tags">
+      <span class="research-tag">Python</span>
+      <span class="research-tag">PanelOLS</span>
+      <span class="research-tag">Diff-in-Differences</span>
+      <span class="research-tag">BLS OEWS</span>
+      <span class="research-tag">Fixed Effects</span>
+      <span class="research-tag">Econometrics</span>
+    </div>
+    <ul class="research-bullets">
+      <li>Analyzed 544K+ BLS occupation-MSA observations using diff-in-diff and PanelOLS fixed-effects models</li>
+      <li>Evaluated post-COVID remote-work wage effects through event-study analysis and econometric testing</li>
+    </ul>
+  </div>
+
+  <div class="research-item">
+    <div class="research-badge">Data Analysis Project</div>
+    <div class="research-num">02</div>
+    <div class="research-title">Econ 382 CPS Wage Study</div>
+    <div class="research-meta">R</div>
+    <div class="research-tags">
+      <span class="research-tag">R</span>
+      <span class="research-tag">OLS</span>
+      <span class="research-tag">Robust SE</span>
+      <span class="research-tag">CPS Microdata</span>
+    </div>
+    <ul class="research-bullets">
+      <li>Processed and cleaned 65K+ CPS records in R for demographic and wage regression analysis</li>
+      <li>Built OLS regression models with robust errors, explaining 30–40% of wage variation outcomes</li>
+    </ul>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Experience</h2>
+    <span class="section-label">Career History</span>
+  </div>
+
+  <div class="exp-group-label">// Professional Experience</div>
+
+  <!-- Macy's -->
+  <div class="exp-item">
+    <div class="exp-left">
+      <div class="exp-date">Nov 2025 – Jan 2026</div>
+      <div class="exp-loc">New York, NY</div>
+      <div class="exp-badge-small">Operations &amp; Analytics</div>
+    </div>
+    <div class="exp-right">
+      <div class="exp-title">Sales Associate (Operations and Analytics)</div>
+      <div class="exp-co">Macy's</div>
+      <ul class="exp-bullets">
+        <li>Analyzed POS trends for 200+ SKUs in Excel, supporting $3K+ in daily sales and inventory decisions</li>
+        <li>Optimized replenishment for 200+ products through sales tracking, improving shelf availability storewide</li>
+        <li>Coordinated high-traffic operations and service workflows, contributing to a 15% increase in repeat visits</li>
+        <li>Monitored inventory and POS reporting daily, maintaining operational accuracy across multiple departments</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Kassam -->
+  <div class="exp-item">
+    <div class="exp-left">
+      <div class="exp-date">Aug 2025 – Oct 2025</div>
+      <div class="exp-loc">New York, NY</div>
+      <div class="exp-badge-small">Internship</div>
+    </div>
+    <div class="exp-right">
+      <div class="exp-title">Business and Financial Analyst Intern</div>
+      <div class="exp-co">Kassam Trading Company</div>
+      <ul class="exp-bullets">
+        <li>Built 5+ valuation models in Python and Excel, analyzing pricing trends across 50+ financial assets</li>
+        <li>Conducted compliance reviews for 50+ products using market research and internal reporting frameworks</li>
+        <li>Developed Power BI dashboards integrating financial data, improving operational visibility for leadership</li>
+        <li>Performed competitor analysis across 40+ regional markets, supporting strategic planning efforts</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Runwei -->
+  <div class="exp-item">
+    <div class="exp-left">
+      <div class="exp-date">March 2025 – May 2025</div>
+      <div class="exp-loc">New York, NY</div>
+      <div class="exp-badge-small">Internship</div>
+    </div>
+    <div class="exp-right">
+      <div class="exp-title">Business Development and Operations Intern</div>
+      <div class="exp-co">Runwei</div>
+      <ul class="exp-bullets">
+        <li>Increased qualified leads by 25% through AI-driven market research and targeted outreach initiatives</li>
+        <li>Secured engagement from 15+ organizations through data-backed partnership presentations and analysis</li>
+        <li>Built KPI dashboards in Excel, improving operational reporting efficiency and sales tracking accuracy</li>
+        <li>Analyzed customer and market data trends, supporting outreach strategy and business expansion planning</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ArtEast -->
+  <div class="exp-item">
+    <div class="exp-left">
+      <div class="exp-date">Jul 2024 – Aug 2024</div>
+      <div class="exp-loc">New York, NY</div>
+      <div class="exp-badge-small">Internship</div>
+    </div>
+    <div class="exp-right">
+      <div class="exp-title">Data Analyst Marketing Intern</div>
+      <div class="exp-co">ArtEast</div>
+      <ul class="exp-bullets">
+        <li>Consolidated 3 years of survey data into Excel datasets for trend and demographic analysis initiatives</li>
+        <li>Analyzed 1,000+ survey responses to identify engagement drivers and audience behavior patterns accurately</li>
+        <li>Designed data visualization reports improving outreach strategy and social media acquisition planning</li>
+        <li>Evaluated attendance and sentiment trends in Excel, informing marketing and event strategy decisions</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Key Food -->
+  <div class="exp-item">
+    <div class="exp-left">
+      <div class="exp-date">Jan 2022 - Jun 2024</div>
+      <div class="exp-loc">New York, NY</div>
+      <div class="exp-badge-small">Operations</div>
+    </div>
+    <div class="exp-right">
+      <div class="exp-title">Team Lead</div>
+      <div class="exp-co">Key Food Marketplace</div>
+      <ul class="exp-bullets">
+        <li>Directed operations for a 20+ member team, increasing customer satisfaction metrics by 35% overall</li>
+        <li>Managed 300+ SKUs through FIFO inventory controls, reducing spoilage and increasing sales by 17%</li>
+        <li>Reconciled daily POS transactions across shifts, maintaining zero reporting discrepancies over 2 years</li>
+        <li>Trained front-end staff on operational procedures, improving productivity and customer service performance</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- EXTRACURRICULAR -->
+<section id="activities">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Extracurricular Activities</h2>
+    <span class="section-label">Leadership &amp; Community</span>
+  </div>
+
+  <!-- Cricket Club -->
+  <div class="exp-item">
+    <div class="exp-left">
+      <div class="exp-date">Jan. 2024 - Present</div>
+      <div class="exp-loc">New York, NY</div>
+      <div class="exp-badge-small">President</div>
+    </div>
+    <div class="exp-right">
+      <div class="exp-title">Queens College Cricket Club</div>
+      <div class="exp-co">CUNY Queens College</div>
+      <ul class="exp-bullets">
+        <li>Led strategic planning efforts to boost club membership by putting up fliers resulting in club growth of 5+ members per month</li>
+        <li>Developed fundraising campaigns resulting in donations totaling to about $1000 for equipment including bats, balls, and jerseys</li>
+        <li>Established partnerships with other clubs, fostering collaboration, and ultimately broadening the club's impact and influence</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ALPFA -->
+  <div class="exp-item">
+    <div class="exp-left">
+      <div class="exp-date">Aug. 2023 - Present</div>
+      <div class="exp-loc">New York, NY</div>
+      <div class="exp-badge-small">Team Leader</div>
+    </div>
+    <div class="exp-right">
+      <div class="exp-title">Association for Latino Professional of America (ALPFA)</div>
+      <div class="exp-co">CUNY Queens College Chapter</div>
+      <ul class="exp-bullets">
+        <li>Attend 5+ office visits to gain an understanding of different career paths relating to Quantitative Economics</li>
+        <li>Assisted in packing 500+ meals for Bloomberg Philanthropies Million Meals Challenge in order to feed families</li>
+        <li>Participate in 10+ professional development workshops to gain further insight regarding skills needed in the workplace</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Let's build something together</h2>
+    <span class="section-label">Open to hire — North America &amp; UAE</span>
+  </div>
+  <p class="contact-sub">Actively seeking full-time analyst roles starting May 2026. Open to opportunities across the USA, Canada, and the UAE — willing to relocate immediately.</p>
+  <div class="role-tags">
+    <span class="role-tag">Business Analyst</span>
+    <span class="role-tag">Financial Analyst</span>
+    <span class="role-tag">Operations Analyst</span>
+    <span class="role-tag">Strategy Analyst</span>
+    <span class="role-tag">Startups</span>
+  </div>
+  <p class="contact-note"><strong>// US Citizen (born in the USA) — no sponsorship required</strong><br>USA · Canada · UAE · Remote · Willing to relocate immediately</p>
+  <a href="Shoukat_Ali_Piracha_Resume.pdf" target="_blank" class="resume-cta">↓ Download Resume (PDF)</a>
+  <div class="contact-grid">
+    <div class="contact-cell">
+      <div class="contact-cell-label">Email</div>
+      <div class="contact-cell-val"><a href="mailto:shoukatpiracha3@gmail.com">shoukatpiracha3@gmail.com</a></div>
+    </div>
+    <div class="contact-cell">
+      <div class="contact-cell-label">Phone</div>
+      <div class="contact-cell-val"><a href="tel:9293934759">929-393-4759</a></div>
+    </div>
+    <div class="contact-cell">
+      <div class="contact-cell-label">LinkedIn</div>
+      <div class="contact-cell-val"><a href="https://linkedin.com/in/ShoukatAliPiracha" target="_blank">linkedin.com/in/ShoukatAliPiracha</a></div>
+    </div>
+  </div>
+  <div class="contact-meta-grid">
+    <div class="contact-meta-cell">
+      <div class="contact-meta-label">Based In</div>
+      <div class="contact-meta-val">New York, NY</div>
+    </div>
+    <div class="contact-meta-cell">
+      <div class="contact-meta-label">Open To</div>
+      <div class="contact-meta-val">USA · Canada · UAE · Remote</div>
+    </div>
+    <div class="contact-meta-cell">
+      <div class="contact-meta-label">Work Auth</div>
+      <div class="contact-meta-val">US Citizen (born in the USA)</div>
+    </div>
+    <div class="contact-meta-cell">
+      <div class="contact-meta-label">Graduation</div>
+      <div class="contact-meta-val">May 2026</div>
+    </div>
+    <div class="contact-meta-cell">
+      <div class="contact-meta-label">Degree</div>
+      <div class="contact-meta-val">BS Quantitative Economics</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span>SAP://portfolio © 2026 Shoukat Ali Piracha · CUNY Queens College · US Citizen · Open to North America &amp; UAE</span>
+  <span>BS Quantitative Economics · May 2026</span>
+</footer>
+
+</body>
+</html>
