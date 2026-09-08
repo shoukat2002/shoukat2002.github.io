@@ -1,754 +1,576 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Quantitative Business Analyst candidate, May 2026. US Citizen (born in the USA). CUNY Queens College. Python, R, SQL, MATLAB. Open to roles across North America.">
-  <meta property="og:title" content="Shoukat Ali Piracha — Quantitative Business Analyst">
-  <meta property="og:description" content="May 2026 graduate. US Citizen (born in the USA). Python · R · SQL · MATLAB · Bloomberg Terminal. Econometric research · Financial Modeling · Open to North America.">
-  <meta property="og:type" content="website">
-  <title>Shoukat Ali Piracha — Quantitative Business Analyst</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg:          #020810;
-      --surface:     #071020;
-      --surface2:    #0c1a2e;
-      --border:      #1a2d4a;
-      --border2:     #0f1e33;
-      --green:       #22d46a;
-      --green-dim:   #16a34a;
-      --green-glow:  rgba(34,212,106,0.12);
-      --text:        #dde6f0;
-      --text-muted:  #5a7a9a;
-      --text-dim:    #8aaac0;
-      --red:         #f87171;
-      --mono: "DM Mono", "Courier New", monospace;
-      --sans: "DM Sans", sans-serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--mono);
-      font-size: 14px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    /* ── SCROLLBAR ─────────────────────────── */
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+<title>Shoukat Ali Piracha — Business Operations, GTM &amp; Analytics</title>
+<meta name="description" content="Quantitative Economics graduate (Queens College, CUNY) with experience across business operations, startup GTM, financial operations, and analytics. Excel, SQL, Python, Power BI. Based in New York City.">
+<link rel="canonical" href="https://shoukat2002.github.io/">
 
-    /* ── NAV ───────────────────────────────── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      background: rgba(2,8,16,0.96);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(12px);
-      display: flex; align-items: center;
-      justify-content: space-between;
-      padding: 0 32px; height: 52px;
-    }
-    .nav-logo {
-      font-family: var(--mono); font-weight: 500; font-size: 13px;
-      color: var(--green); letter-spacing: .04em; text-decoration: none;
-    }
-    .nav-logo span { color: var(--text-muted); }
-    .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a {
-      font-size: 12px; color: var(--text-muted); text-decoration: none;
-      letter-spacing: .06em; transition: color .18s; font-weight: 400;
-    }
-    .nav-links a:hover { color: var(--green); }
-    .nav-resume a {
-      font-size: 12px; color: var(--green); text-decoration: none;
-      border: 1px solid var(--green-dim); padding: 5px 14px;
-      letter-spacing: .06em; transition: background .18s;
-    }
-    .nav-resume a:hover { background: var(--green-glow); }
+<meta property="og:title" content="Shoukat Ali Piracha — Business Operations, GTM &amp; Analytics">
+<meta property="og:description" content="Quantitative Economics graduate with experience across startup GTM, financial operations, market research, and data analysis. Based in New York City.">
+<meta property="og:url" content="https://shoukat2002.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://shoukat2002.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shoukat Ali Piracha — Business Operations, GTM &amp; Analytics">
+<meta name="twitter:description" content="Quantitative Economics graduate with experience across startup GTM, financial operations, market research, and data analysis.">
+<meta name="twitter:image" content="https://shoukat2002.github.io/og-image.png">
 
-    /* ── TICKER ────────────────────────────── */
-    .ticker-wrap {
-      position: fixed; top: 52px; left: 0; right: 0; z-index: 190;
-      background: var(--surface); border-bottom: 1px solid var(--border);
-      overflow: hidden; height: 28px; display: flex; align-items: center;
-    }
-    .ticker-track {
-      display: flex; gap: 0; white-space: nowrap;
-      animation: ticker 60s linear infinite;
-    }
-    .ticker-track:hover { animation-play-state: paused; }
-    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .ticker-item {
-      display: inline-flex; align-items: center; gap: 20px;
-      padding: 0 24px; font-size: 10px; letter-spacing: .1em;
-      color: var(--green); font-weight: 500;
-    }
-    .ticker-item .sep { color: var(--border); }
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%234338CA'/><text x='50' y='66' font-size='42' font-family='Georgia,serif' fill='white' text-anchor='middle'>SP</text></svg>">
 
-    /* ── MAIN ──────────────────────────────── */
-    main { padding-top: 80px; }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
 
-    /* ── HERO ──────────────────────────────── */
-    .hero {
-      padding: 72px 64px 80px;
-      border-bottom: 1px solid var(--border);
-      max-width: 1200px; margin: 0 auto;
-    }
-    .hero-label {
-      font-size: 10px; letter-spacing: .18em; color: var(--text-muted);
-      margin-bottom: 24px; text-transform: uppercase;
-    }
-    .hero-label span { color: var(--green); }
-    .hero-name {
-      font-family: var(--sans); font-size: clamp(40px, 5vw, 64px);
-      font-weight: 300; line-height: 1.08; letter-spacing: -.01em;
-      color: var(--text); margin-bottom: 14px;
-    }
-    .hero-name em { font-style: italic; color: var(--green); }
-    .hero-sub {
-      font-size: 12px; letter-spacing: .1em; color: var(--text-muted);
-      margin-bottom: 36px; text-transform: uppercase;
-    }
-    .hero-desc {
-      font-family: var(--sans); font-size: 15px; line-height: 1.8;
-      color: var(--text-dim); max-width: 680px; margin-bottom: 48px;
-    }
-    .hero-desc strong { color: var(--green); font-weight: 500; }
-
-    /* STATS */
-    .stats-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 1px; background: var(--border);
-      border: 1px solid var(--border); margin-bottom: 48px;
-    }
-    .stat-cell {
-      background: var(--surface); padding: 20px 24px;
-    }
-    .stat-num {
-      font-family: var(--mono); font-size: 28px; font-weight: 500;
-      color: var(--green); line-height: 1; margin-bottom: 6px;
-      letter-spacing: -.02em;
-    }
-    .stat-label { font-size: 10px; color: var(--text-muted); letter-spacing: .1em; text-transform: uppercase; }
-
-    /* CTA BUTTONS */
-    .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
-    .btn {
-      font-family: var(--mono); font-size: 12px; letter-spacing: .08em;
-      padding: 10px 22px; text-decoration: none; cursor: pointer;
-      transition: all .18s; border: 1px solid; display: inline-block;
-    }
-    .btn-primary { color: var(--bg); background: var(--green); border-color: var(--green); }
-    .btn-primary:hover { background: transparent; color: var(--green); }
-    .btn-ghost { color: var(--text-dim); background: transparent; border-color: var(--border); }
-    .btn-ghost:hover { border-color: var(--green); color: var(--green); }
-
-    /* ── SECTIONS ──────────────────────────── */
-    section {
-      max-width: 1200px; margin: 0 auto;
-      padding: 80px 64px; border-bottom: 1px solid var(--border);
-    }
-    section:last-of-type { border-bottom: none; }
-
-    .section-header {
-      display: flex; align-items: baseline; gap: 16px; margin-bottom: 56px;
-    }
-    .section-num { font-size: 11px; color: var(--text-muted); letter-spacing: .12em; }
-    .section-title {
-      font-family: var(--sans); font-size: clamp(22px, 3vw, 30px);
-      font-weight: 300; color: var(--text); letter-spacing: -.01em;
-    }
-    .section-label {
-      font-size: 10px; letter-spacing: .14em; color: var(--text-muted);
-      text-transform: uppercase; margin-bottom: 8px;
-    }
-
-    /* ── EDUCATION ─────────────────────────── */
-    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-    .edu-main {}
-    .edu-degree {
-      font-family: var(--sans); font-size: 22px; font-weight: 400;
-      color: var(--text); margin-bottom: 4px;
-    }
-    .edu-school { font-size: 12px; color: var(--green); margin-bottom: 4px; letter-spacing: .04em; }
-    .edu-meta { font-size: 11px; color: var(--text-muted); margin-bottom: 28px; }
-    .edu-honors {
-      background: var(--surface); border: 1px solid var(--border);
-      border-left: 2px solid var(--green); padding: 14px 18px;
-      font-size: 12px; color: var(--text-dim); margin-bottom: 12px;
-    }
-    .edu-honors strong { color: var(--green); font-weight: 500; }
-    .coursework-label { font-size: 10px; letter-spacing: .12em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 12px; margin-top: 28px; }
-    .course-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .course-tag {
-      font-size: 11px; color: var(--text-dim); border: 1px solid var(--border2);
-      padding: 4px 10px; background: var(--surface);
-    }
-
-    /* ── SKILLS ────────────────────────────── */
-    .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-    .skill-block {
-      background: var(--surface); border: 1px solid var(--border);
-      padding: 24px 24px 20px;
-    }
-    .skill-block-title {
-      font-size: 10px; letter-spacing: .14em; color: var(--green);
-      text-transform: uppercase; margin-bottom: 16px; padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-    }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .skill-tag {
-      font-size: 11px; color: var(--text-dim);
-      border: 1px solid var(--border2); padding: 5px 12px;
-      transition: all .18s;
-    }
-    .skill-tag:hover { border-color: var(--green-dim); color: var(--green); }
-
-    /* ── RESEARCH ──────────────────────────── */
-    .research-item {
-      margin-bottom: 56px; padding-bottom: 56px;
-      border-bottom: 1px solid var(--border2);
-    }
-    .research-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-    .research-badge {
-      font-size: 9px; letter-spacing: .16em; text-transform: uppercase;
-      color: var(--text-muted); border: 1px solid var(--border);
-      padding: 3px 10px; display: inline-block; margin-bottom: 14px;
-    }
-    .research-num { font-size: 32px; color: var(--border); font-weight: 500; margin-bottom: 12px; }
-    .research-title {
-      font-family: var(--sans); font-size: 20px; font-weight: 400;
-      color: var(--text); margin-bottom: 4px; line-height: 1.3;
-    }
-    .research-meta { font-size: 11px; color: var(--text-muted); margin-bottom: 20px; letter-spacing: .04em; }
-    .research-desc { font-size: 13px; line-height: 1.8; color: var(--text-dim); max-width: 700px; margin-bottom: 20px; }
-    .research-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
-    .research-tag {
-      font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
-      color: var(--text-muted); background: var(--surface);
-      border: 1px solid var(--border2); padding: 3px 9px;
-    }
-    .research-bullets { list-style: none; }
-    .research-bullets li {
-      font-size: 13px; color: var(--text-dim); padding: 6px 0;
-      padding-left: 20px; position: relative; line-height: 1.6;
-    }
-    .research-bullets li::before { content: "●"; position: absolute; left: 0; color: var(--green); font-size: 8px; top: 9px; }
-    .research-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
-    .research-links a {
-      font-family: var(--mono); font-size: 11px; letter-spacing: .06em;
-      color: var(--green); text-decoration: none;
-      border: 1px solid var(--green-dim); padding: 7px 16px;
-      transition: background .18s;
-    }
-    .research-links a:hover { background: var(--green-glow); }
-
-    /* ── EXPERIENCE ────────────────────────── */
-    .exp-group-label {
-      font-size: 11px; letter-spacing: .1em; color: var(--text-muted);
-      margin-bottom: 32px; margin-top: 48px;
-    }
-    .exp-group-label:first-of-type { margin-top: 0; }
-    .exp-item {
-      padding: 36px 0; border-bottom: 1px solid var(--border2);
-      display: grid; grid-template-columns: 200px 1fr; gap: 40px;
-    }
-    .exp-item:last-child { border-bottom: none; }
-    .exp-left { }
-    .exp-date { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; letter-spacing: .04em; }
-    .exp-loc { font-size: 11px; color: var(--text-muted); margin-bottom: 12px; }
-    .exp-badge-small {
-      font-size: 9px; letter-spacing: .12em; text-transform: uppercase;
-      color: var(--green-dim); border: 1px solid var(--border);
-      padding: 2px 8px; display: inline-block;
-    }
-    .exp-right { }
-    .exp-title {
-      font-family: var(--sans); font-size: 18px; font-weight: 400;
-      color: var(--text); margin-bottom: 2px;
-    }
-    .exp-co { font-size: 12px; color: var(--green); margin-bottom: 18px; letter-spacing: .04em; }
-    .exp-bullets { list-style: none; }
-    .exp-bullets li {
-      font-size: 13px; color: var(--text-dim); padding: 5px 0;
-      padding-left: 18px; position: relative; line-height: 1.65;
-    }
-    .exp-bullets li::before { content: "●"; position: absolute; left: 0; color: var(--green); font-size: 7px; top: 9px; }
-
-    /* ── CONTACT ───────────────────────────── */
-    .contact-header {
-      font-family: var(--sans); font-size: clamp(28px, 4vw, 44px);
-      font-weight: 300; color: var(--text); line-height: 1.15;
-      margin-bottom: 16px; letter-spacing: -.01em;
-    }
-    .contact-header em { font-style: italic; color: var(--green); }
-    .contact-sub { font-size: 13px; color: var(--text-dim); max-width: 560px; margin-bottom: 40px; line-height: 1.7; }
-    .role-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
-    .role-tag {
-      font-size: 11px; letter-spacing: .08em; color: var(--green);
-      border: 1px solid var(--green-dim); padding: 6px 14px;
-    }
-    .contact-note {
-      font-size: 11px; color: var(--text-muted); margin-bottom: 40px;
-      border-left: 2px solid var(--green-dim); padding-left: 14px;
-    }
-    .contact-note strong { color: var(--green); }
-    .resume-cta {
-      display: inline-block; font-size: 12px; color: var(--bg);
-      background: var(--green); border: 1px solid var(--green);
-      padding: 12px 28px; text-decoration: none; letter-spacing: .08em;
-      margin-bottom: 56px; transition: all .18s;
-    }
-    .resume-cta:hover { background: transparent; color: var(--green); }
-    .contact-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: var(--border); border: 1px solid var(--border);
-      margin-bottom: 24px;
-    }
-    .contact-cell { background: var(--surface); padding: 20px 24px; }
-    .contact-cell-label { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
-    .contact-cell-val { font-size: 13px; color: var(--text); }
-    .contact-cell-val a { color: var(--text); text-decoration: none; transition: color .18s; }
-    .contact-cell-val a:hover { color: var(--green); }
-    .contact-meta-grid {
-      display: grid; grid-template-columns: repeat(5, 1fr);
-      gap: 1px; background: var(--border2); border: 1px solid var(--border2);
-    }
-    .contact-meta-cell { background: var(--surface); padding: 14px 18px; }
-    .contact-meta-label { font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
-    .contact-meta-val { font-size: 11px; color: var(--text-dim); }
-
-    /* ── FOOTER ────────────────────────────── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 20px 64px;
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: 11px; color: var(--text-muted); letter-spacing: .04em;
-    }
-    footer a { color: var(--text-muted); text-decoration: none; transition: color .18s; }
-    footer a:hover { color: var(--green); }
-
-    /* ── RESPONSIVE ────────────────────────── */
-    @media (max-width: 900px) {
-      nav { padding: 0 20px; }
-      .nav-links { gap: 16px; display: none; }
-      .hero, section { padding: 48px 24px; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .edu-grid { grid-template-columns: 1fr; }
-      .skills-grid { grid-template-columns: 1fr; }
-      .exp-item { grid-template-columns: 1fr; gap: 8px; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .contact-meta-grid { grid-template-columns: repeat(2, 1fr); }
-      footer { flex-direction: column; gap: 8px; padding: 20px 24px; text-align: center; }
-    }
-  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Shoukat Ali Piracha",
+  "url": "https://shoukat2002.github.io/",
+  "email": "mailto:shoukatpiracha3@gmail.com",
+  "telephone": "+1-929-393-4759",
+  "jobTitle": "Business Operations",
+  "description": "Quantitative Economics graduate with experience across business operations, startup GTM, financial operations, and analytics.",
+  "address": { "@type": "PostalPlace", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Queens College, City University of New York (CUNY)" },
+  "knowsLanguage": ["English", "Urdu", "Punjabi"],
+  "knowsAbout": ["Business Operations", "Go-To-Market", "Financial Operations", "KPI Reporting", "Market Research", "Data Analysis", "Econometrics"],
+  "sameAs": [
+    "https://www.linkedin.com/in/shoukatalipiracha",
+    "https://github.com/shoukat2002",
+    "https://x.com/ShoukatBuilds"
+  ]
+}
+</script>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="#"><span>SAP://</span>portfolio</a>
-  <ul class="nav-links">
-    <li><a href="#education">Education</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#activities">Activities</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="nav-resume"><a href="Shoukat_Ali_Piracha_Resume.pdf" target="_blank">Resume ↗</a></div>
-</nav>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<!-- TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <span class="ticker-item">PYTHON PROFICIENT <span class="sep">·</span> R ECONOMETRICS <span class="sep">·</span> SQL ADVANCED <span class="sep">·</span> MATLAB <span class="sep">·</span> BLOOMBERG CERTIFIED <span class="sep">·</span> FINANCIAL MODELING <span class="sep">·</span> DiD PANELOLS · 544K OBS <span class="sep">·</span> OLS REGRESSION <span class="sep">·</span> CPS MICRODATA <span class="sep">·</span> POWER BI <span class="sep">·</span> REGRESSION ANALYSIS <span class="sep">·</span> FORECASTING <span class="sep">·</span> WORK AUTH US CITIZEN — BORN IN USA <span class="sep">·</span> OPEN TO NORTH AMERICA &amp; UAE <span class="sep">·</span> START DATE MAY 2026</span>
-    <span class="ticker-item">PYTHON PROFICIENT <span class="sep">·</span> R ECONOMETRICS <span class="sep">·</span> SQL ADVANCED <span class="sep">·</span> MATLAB <span class="sep">·</span> BLOOMBERG CERTIFIED <span class="sep">·</span> FINANCIAL MODELING <span class="sep">·</span> DiD PANELOLS · 544K OBS <span class="sep">·</span> OLS REGRESSION <span class="sep">·</span> CPS MICRODATA <span class="sep">·</span> POWER BI <span class="sep">·</span> REGRESSION ANALYSIS <span class="sep">·</span> FORECASTING <span class="sep">·</span> WORK AUTH US CITIZEN — BORN IN USA <span class="sep">·</span> OPEN TO NORTH AMERICA &amp; UAE <span class="sep">·</span> START DATE MAY 2026</span>
-  </div>
-</div>
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">SP</span>
+      <span class="brand-name">Shoukat Ali Piracha</span>
+    </a>
 
-<!-- MAIN -->
-<main>
-
-<!-- HERO -->
-<div class="hero">
-  <p class="hero-label">US Citizen (born in USA) <span>·</span> Open to North America &amp; UAE <span>·</span> May 2026</p>
-  <h1 class="hero-name">Shoukat Ali <em>Piracha</em></h1>
-  <p class="hero-sub">Quantitative Business Analyst · BS Economics · CUNY Queens College</p>
-  <p class="hero-desc">
-    I turn messy financial and operational data into decisions that move businesses. From <strong>valuation models across 50+ financial assets</strong> to <strong>difference-in-differences econometric research on 544,000+ occupation-MSA observations</strong> — I work at the intersection of quantitative finance, data analytics, and business strategy.
-  </p>
-  <div class="stats-grid">
-    <div class="stat-cell">
-      <div class="stat-num">3</div>
-      <div class="stat-label">Internships</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-num">544K</div>
-      <div class="stat-label">Observations Analyzed</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-num">200+</div>
-      <div class="stat-label">SKUs Tracked</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-num">2</div>
-      <div class="stat-label">Research Projects</div>
-    </div>
-  </div>
-  <div class="hero-ctas">
-    <a href="mailto:shoukatpiracha3@gmail.com" class="btn btn-primary">Get in touch</a>
-    <a href="https://linkedin.com/in/ShoukatAliPiracha" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
-    <a href="Shoukat_Ali_Piracha_Resume.pdf" target="_blank" class="btn btn-ghost">View Resume ↗</a>
-  </div>
-</div>
-
-<!-- EDUCATION -->
-<section id="education">
-  <div class="section-header">
-    <span class="section-num">01</span>
-    <h2 class="section-title">Education</h2>
-    <span class="section-label">Academic Background</span>
-  </div>
-  <div class="edu-grid">
-    <div class="edu-main">
-      <div class="edu-degree">BS Quantitative Economics</div>
-      <div class="edu-school">CUNY Queens College</div>
-      <div class="edu-meta">Expected May 2026 · Queens, New York</div>
-      <div class="edu-honors"><strong>Honors:</strong> Carole &amp; Norman Barham Family Scholarship</div>
-      <div class="edu-honors"><strong>Dean's List:</strong> Spring 2024, Fall 2025</div>
-      <div class="coursework-label">Relevant Coursework</div>
-      <div class="course-tags">
-        <span class="course-tag">Econometrics</span>
-        <span class="course-tag">Statistical Modeling</span>
-        <span class="course-tag">Quantitative Methods</span>
-        <span class="course-tag">Financial Economics</span>
-        <span class="course-tag">Honors Seminar</span>
+    <nav class="site-nav" id="siteNav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button type="button" class="btn btn-quiet js-open-tldr">30-second version</button>
+        <a class="btn btn-solid" href="Shoukat_Ali_Piracha_Resume.pdf" target="_blank" rel="noopener">Resume</a>
       </div>
+    </nav>
+
+    <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Menu">
+      <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ══ HERO ══════════════════════════════════════════════ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow reveal">US Citizen <span class="dot" aria-hidden="true"></span> Open to Relocation <span class="dot" aria-hidden="true"></span> New York City</p>
+
+    <h1 class="hero-name reveal">Shoukat Ali <em>Piracha</em></h1>
+
+    <p class="hero-headline reveal">
+      Quantitative Economics graduate working in
+      <span class="cycler" id="cycler" data-words="Business Operations|GTM|Analytics|Strategy &amp; Operations">Business Operations</span>
+    </p>
+
+    <p class="hero-sub reveal">
+      Recent Quantitative Economics graduate with experience across startup GTM, financial
+      operations, market research, and data analysis.
+    </p>
+
+    <div class="hero-ctas reveal">
+      <a class="btn btn-solid btn-lg" href="Shoukat_Ali_Piracha_Resume.pdf" target="_blank" rel="noopener">View Resume</a>
+      <a class="btn btn-outline btn-lg" href="https://www.linkedin.com/in/shoukatalipiracha" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-outline btn-lg" href="https://github.com/shoukat2002" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-outline btn-lg" href="https://x.com/ShoukatBuilds" target="_blank" rel="noopener">X</a>
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-header">
-    <span class="section-num">02</span>
-    <h2 class="section-title">Technical skills</h2>
-    <span class="section-label">Capabilities</span>
-  </div>
-  <div class="skills-grid">
-    <div class="skill-block">
-      <div class="skill-block-title">Programming &amp; Analytics</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">R</span>
-        <span class="skill-tag">SQL</span>
-        <span class="skill-tag">MATLAB</span>
+<!-- ══ VIDEO INTRO ═══════════════════════════════════════
+     Stays hidden until the video file actually loads, so a missing
+     file never renders a broken player. See media/README.md. -->
+<section class="video-section" id="intro" aria-labelledby="intro-title" hidden>
+  <div class="wrap">
+    <div class="video-card reveal">
+      <div class="video-head">
+        <h2 class="video-title" id="intro-title">Meet Shoukat in 45 seconds</h2>
+        <p class="video-sub">A quick overview of my background and where I'm headed.</p>
       </div>
-    </div>
-    <div class="skill-block">
-      <div class="skill-block-title">Visualization &amp; Tools</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Power BI</span>
-        <span class="skill-tag">Tableau</span>
-        <span class="skill-tag">Excel (Advanced)</span>
-      </div>
-    </div>
-    <div class="skill-block">
-      <div class="skill-block-title">Analytical Skills</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Regression Analysis</span>
-        <span class="skill-tag">Financial Modeling</span>
-        <span class="skill-tag">Forecasting</span>
-        <span class="skill-tag">Econometrics</span>
-      </div>
-    </div>
-    <div class="skill-block">
-      <div class="skill-block-title">Certificates</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Google Data Analytics</span>
-        <span class="skill-tag">JPMorgan Forage Excel Simulation</span>
-        <span class="skill-tag">Bloomberg Market Concepts</span>
-      </div>
+      <video id="introVideo" class="video-player" controls preload="metadata"
+             playsinline poster="media/shoukat-intro-poster.jpg">
+        <source src="media/shoukat-intro.mp4" type="video/mp4">
+        <track kind="captions" src="media/shoukat-intro.vtt" srclang="en" label="English" default>
+        <p>Your browser can't play embedded video.
+           <a href="media/shoukat-intro.mp4">Download the introduction (MP4)</a>.</p>
+      </video>
+      <!-- If the presenter is AI-generated rather than a recording of Shoukat,
+           uncomment the line below so viewers are told up front. -->
+      <!-- <p class="video-note">This introduction is delivered by an AI-generated presenter. The script and background are Shoukat's own.</p> -->
     </div>
   </div>
 </section>
 
-<!-- RESEARCH -->
-<section id="research">
-  <div class="section-header">
-    <span class="section-num">03</span>
-    <h2 class="section-title">Research &amp; projects</h2>
-    <span class="section-label">Quantitative Work</span>
-  </div>
-
-  <div class="research-item">
-    <div class="research-badge">Honors Research Paper · Completed</div>
-    <div class="research-num">01</div>
-    <div class="research-title">Remote Work and Wage Dynamics Research Paper</div>
-    <div class="research-meta">Python, PanelOLS, Econometrics · ECON 392W</div>
-    <div class="research-tags">
-      <span class="research-tag">Python</span>
-      <span class="research-tag">PanelOLS</span>
-      <span class="research-tag">Diff-in-Differences</span>
-      <span class="research-tag">BLS OEWS</span>
-      <span class="research-tag">Fixed Effects</span>
-      <span class="research-tag">Econometrics</span>
-    </div>
-    <ul class="research-bullets">
-      <li>Analyzed 544K+ BLS occupation-MSA observations using diff-in-diff and PanelOLS fixed-effects models</li>
-      <li>Evaluated post-COVID remote-work wage effects through event-study analysis and econometric testing</li>
-    </ul>
-    <div class="research-links">
-      <a href="ECON392W_Remote_Work_Wage_Dynamics_Piracha.pdf" target="_blank" rel="noopener">Read Paper (PDF) ↗</a>
-      <a href="ECON392W_Piracha_Submission.zip">Download Code &amp; Data (ZIP) ↓</a>
-    </div>
-  </div>
-
-  <div class="research-item">
-    <div class="research-badge">Data Analysis Project</div>
-    <div class="research-num">02</div>
-    <div class="research-title">Econ 382 CPS Wage Study</div>
-    <div class="research-meta">R · Take-Home Project</div>
-    <div class="research-tags">
-      <span class="research-tag">R</span>
-      <span class="research-tag">OLS</span>
-      <span class="research-tag">Robust SE</span>
-      <span class="research-tag">CPS Microdata</span>
-    </div>
-    <ul class="research-bullets">
-      <li>Processed and cleaned 1.3M+ CPS records in R for demographic and wage regression analysis</li>
-      <li>Built OLS regression models with heteroskedasticity-robust standard errors across a 115K-observation sample</li>
-    </ul>
-    <div class="research-links">
-      <a href="ECON382_CPS_Wage_Study_Piracha.pdf" target="_blank" rel="noopener">View Report (PDF) ↗</a>
-      <a href="ECON382_CPS_Wage_Study_Piracha.qmd">Source Code (.qmd) ↓</a>
+<!-- ══ LENS ══════════════════════════════════════════════ -->
+<section class="lens-section" id="lens" aria-labelledby="lens-title">
+  <div class="wrap">
+    <div class="lens-bar reveal">
+      <h2 class="lens-title" id="lens-title">What do you want to know about me?</h2>
+      <div class="lens-options" role="group" aria-label="Filter the page by focus area">
+        <button type="button" class="lens-btn is-active" data-lens="all" aria-pressed="true">Everything</button>
+        <button type="button" class="lens-btn" data-lens="ops" aria-pressed="false">Business Operations</button>
+        <button type="button" class="lens-btn" data-lens="gtm" aria-pressed="false">GTM</button>
+        <button type="button" class="lens-btn" data-lens="analytics" aria-pressed="false">Analytics</button>
+        <button type="button" class="lens-btn" data-lens="projects" aria-pressed="false">Projects</button>
+      </div>
+      <p class="lens-hint" id="lensHint" role="status">Everything is shown. Pick a focus to see what's most relevant.</p>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-header">
-    <span class="section-num">04</span>
-    <h2 class="section-title">Experience</h2>
-    <span class="section-label">Career History</span>
-  </div>
+<!-- ══ METRICS ═══════════════════════════════════════════ -->
+<section class="section" id="impact" aria-labelledby="impact-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-num">01</span>
+      <h2 class="section-title" id="impact-title">Impact</h2>
+      <p class="section-note">From my two most recent roles. Click any number for the detail.</p>
+    </div>
 
-  <div class="exp-group-label">// Professional Experience</div>
+    <div class="metrics">
+      <article class="metric reveal" data-tags="gtm ops">
+        <button type="button" class="metric-btn" aria-expanded="false" aria-controls="m1">
+          <span class="metric-num">50<span class="metric-plus">+</span></span>
+          <span class="metric-label">Prospective creators contacted</span>
+          <span class="metric-cue" aria-hidden="true"></span>
+        </button>
+        <div class="metric-body" id="m1" hidden>
+          <dl>
+            <dt>Where</dt><dd>Stealth AI Startup — GTM Intern</dd>
+            <dt>What I did</dt><dd>Owned outreach to 50+ prospective creators, tracking responses and pipeline status to support structured GTM execution.</dd>
+            <dt>Why it mattered</dt><dd>It turns scattered outreach into a pipeline that can be measured and improved.</dd>
+          </dl>
+        </div>
+      </article>
 
-  <!-- Macy's -->
-  <div class="exp-item">
-    <div class="exp-left">
-      <div class="exp-date">Nov 2025 – Jan 2026</div>
-      <div class="exp-loc">New York, NY</div>
-      <div class="exp-badge-small">Operations &amp; Analytics</div>
-    </div>
-    <div class="exp-right">
-      <div class="exp-title">Sales Associate (Operations and Analytics)</div>
-      <div class="exp-co">Macy's</div>
-      <ul class="exp-bullets">
-        <li>Analyzed POS trends for 200+ SKUs in Excel, supporting $3K+ in daily sales and inventory decisions</li>
-        <li>Optimized replenishment for 200+ products through sales tracking, improving shelf availability storewide</li>
-        <li>Coordinated high-traffic operations and service workflows, contributing to a 15% increase in repeat visits</li>
-        <li>Monitored inventory and POS reporting daily, maintaining operational accuracy across multiple departments</li>
-      </ul>
-    </div>
-  </div>
+      <article class="metric reveal" data-tags="gtm analytics">
+        <button type="button" class="metric-btn" aria-expanded="false" aria-controls="m2">
+          <span class="metric-num">40<span class="metric-plus">+</span></span>
+          <span class="metric-label">Creator prospects researched</span>
+          <span class="metric-cue" aria-hidden="true"></span>
+        </button>
+        <div class="metric-body" id="m2" hidden>
+          <dl>
+            <dt>Where</dt><dd>Stealth AI Startup — GTM Intern</dd>
+            <dt>What I did</dt><dd>Researched creator prospects across TikTok and Instagram, assessing audience fit for creator acquisition.</dd>
+            <dt>Why it mattered</dt><dd>Prospect quality sets the ceiling on everything downstream in the funnel.</dd>
+          </dl>
+        </div>
+      </article>
 
-  <!-- Kassam -->
-  <div class="exp-item">
-    <div class="exp-left">
-      <div class="exp-date">Aug 2025 – Oct 2025</div>
-      <div class="exp-loc">New York, NY</div>
-      <div class="exp-badge-small">Internship</div>
-    </div>
-    <div class="exp-right">
-      <div class="exp-title">Business and Financial Analyst Intern</div>
-      <div class="exp-co">Kassam Trading Company</div>
-      <ul class="exp-bullets">
-        <li>Built 5+ valuation models in Python and Excel, analyzing pricing trends across 50+ financial assets</li>
-        <li>Conducted compliance reviews for 50+ products using market research and internal reporting frameworks</li>
-        <li>Developed Power BI dashboards integrating financial data, improving operational visibility for leadership</li>
-        <li>Performed competitor analysis across 40+ regional markets, supporting strategic planning efforts</li>
-      </ul>
-    </div>
-  </div>
+      <article class="metric reveal" data-tags="ops">
+        <button type="button" class="metric-btn" aria-expanded="false" aria-controls="m3">
+          <span class="metric-num">30<span class="metric-plus">+</span></span>
+          <span class="metric-label">Checks &amp; payment transactions</span>
+          <span class="metric-cue" aria-hidden="true"></span>
+        </button>
+        <div class="metric-body" id="m3" hidden>
+          <dl>
+            <dt>Where</dt><dd>Kassam Trading Company — Business Operations &amp; Finance Intern</dd>
+            <dt>What I did</dt><dd>Processed checks and payment transactions while maintaining accurate Excel-based financial documentation.</dd>
+            <dt>Why it mattered</dt><dd>Payment records are the ledger every other operational decision is checked against.</dd>
+          </dl>
+        </div>
+      </article>
 
-  <!-- Runwei -->
-  <div class="exp-item">
-    <div class="exp-left">
-      <div class="exp-date">March 2025 – May 2025</div>
-      <div class="exp-loc">New York, NY</div>
-      <div class="exp-badge-small">Internship</div>
-    </div>
-    <div class="exp-right">
-      <div class="exp-title">Business Development and Operations Intern</div>
-      <div class="exp-co">Runwei</div>
-      <ul class="exp-bullets">
-        <li>Increased qualified leads by 25% through AI-driven market research and targeted outreach initiatives</li>
-        <li>Secured engagement from 15+ organizations through data-backed partnership presentations and analysis</li>
-        <li>Built KPI dashboards in Excel, improving operational reporting efficiency and sales tracking accuracy</li>
-        <li>Analyzed customer and market data trends, supporting outreach strategy and business expansion planning</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- ArtEast -->
-  <div class="exp-item">
-    <div class="exp-left">
-      <div class="exp-date">Jul 2024 – Aug 2024</div>
-      <div class="exp-loc">New York, NY</div>
-      <div class="exp-badge-small">Internship</div>
-    </div>
-    <div class="exp-right">
-      <div class="exp-title">Data Analyst Marketing Intern</div>
-      <div class="exp-co">ArtEast</div>
-      <ul class="exp-bullets">
-        <li>Consolidated 3 years of survey data into Excel datasets for trend and demographic analysis initiatives</li>
-        <li>Analyzed 1,000+ survey responses to identify engagement drivers and audience behavior patterns accurately</li>
-        <li>Designed data visualization reports improving outreach strategy and social media acquisition planning</li>
-        <li>Evaluated attendance and sentiment trends in Excel, informing marketing and event strategy decisions</li>
-      </ul>
+      <article class="metric reveal" data-tags="ops">
+        <button type="button" class="metric-btn" aria-expanded="false" aria-controls="m4">
+          <span class="metric-num">8<span class="metric-plus">+</span></span>
+          <span class="metric-label">Client meetings supported</span>
+          <span class="metric-cue" aria-hidden="true"></span>
+        </button>
+        <div class="metric-body" id="m4" hidden>
+          <dl>
+            <dt>Where</dt><dd>Kassam Trading Company — Business Operations &amp; Finance Intern</dd>
+            <dt>What I did</dt><dd>Coordinated requirements and follow-ups across client meetings with domestic and international buyers.</dd>
+            <dt>Why it mattered</dt><dd>Follow-through between meetings is where client relationships are actually kept.</dd>
+          </dl>
+        </div>
+      </article>
     </div>
   </div>
-
-  <!-- Key Food -->
-  <div class="exp-item">
-    <div class="exp-left">
-      <div class="exp-date">Jan 2022 - Jun 2024</div>
-      <div class="exp-loc">New York, NY</div>
-      <div class="exp-badge-small">Operations</div>
-    </div>
-    <div class="exp-right">
-      <div class="exp-title">Team Lead</div>
-      <div class="exp-co">Key Food Marketplace</div>
-      <ul class="exp-bullets">
-        <li>Directed operations for a 20+ member team, increasing customer satisfaction metrics by 35% overall</li>
-        <li>Managed 300+ SKUs through FIFO inventory controls, reducing spoilage and increasing sales by 17%</li>
-        <li>Reconciled daily POS transactions across shifts, maintaining zero reporting discrepancies over 2 years</li>
-        <li>Trained front-end staff on operational procedures, improving productivity and customer service performance</li>
-      </ul>
-    </div>
-  </div>
-
 </section>
 
+<!-- ══ EXPERIENCE ════════════════════════════════════════ -->
+<section class="section" id="experience" aria-labelledby="exp-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-num">02</span>
+      <h2 class="section-title" id="exp-title">Experience</h2>
+      <p class="section-note">Expand a role for the detail.</p>
+    </div>
 
-<!-- EXTRACURRICULAR -->
-<section id="activities">
-  <div class="section-header">
-    <span class="section-num">05</span>
-    <h2 class="section-title">Extracurricular Activities</h2>
-    <span class="section-label">Leadership &amp; Community</span>
+    <div class="timeline">
+
+      <article class="role reveal is-open" data-tags="gtm analytics" data-skills="pipeline market-research">
+        <h3>
+          <button type="button" class="role-btn" aria-expanded="true" aria-controls="r1">
+            <span class="role-when">Aug 2026 — Present</span>
+            <span class="role-title">GTM Intern</span>
+            <span class="role-co">Stealth AI Startup <span class="role-loc">· New York, NY</span></span>
+            <span class="role-tags" aria-hidden="true"><span class="tag">GTM</span><span class="tag">Analytics</span></span>
+            <span class="role-cue" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="role-panel" id="r1">
+          <div class="role-panel-inner">
+            <ul>
+              <li>Research 40+ creator prospects across TikTok and Instagram, assessing audience fit for creator acquisition</li>
+              <li>Own outreach to 50+ prospective creators, tracking responses and pipeline status for structured GTM execution</li>
+              <li>Design short-form content experiments, analyzing engagement data to refine organic acquisition strategy</li>
+            </ul>
+            <p class="role-tools"><span>Skills Used</span>Pipeline Management · Market Research · Engagement Analysis</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="role reveal" data-tags="ops finance" data-skills="excel finops process">
+        <h3>
+          <button type="button" class="role-btn" aria-expanded="false" aria-controls="r2">
+            <span class="role-when">Aug 2025 — Oct 2025</span>
+            <span class="role-title">Business Operations &amp; Finance Intern</span>
+            <span class="role-co">Kassam Trading Company <span class="role-loc">· New York, NY</span></span>
+            <span class="role-tags" aria-hidden="true"><span class="tag">Operations</span><span class="tag">Finance</span></span>
+            <span class="role-cue" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="role-panel" id="r2">
+          <div class="role-panel-inner">
+            <ul>
+              <li>Processed 30+ checks and payment transactions, maintaining accurate Excel-based financial documentation</li>
+              <li>Monitored company expenses and outstanding payments in Excel, improving visibility into financial activity</li>
+              <li>Coordinated requirements and follow-ups across 8+ client meetings with domestic and international buyers</li>
+            </ul>
+            <p class="role-tools"><span>Skills Used</span>Excel · Financial Operations</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="role reveal" data-tags="gtm ops analytics" data-skills="excel kpi market-research pipeline process">
+        <h3>
+          <button type="button" class="role-btn" aria-expanded="false" aria-controls="r3">
+            <span class="role-when">Mar 2025 — May 2025</span>
+            <span class="role-title">Business Development and Operations Intern</span>
+            <span class="role-co">Runwei <span class="role-loc">· New York, NY</span></span>
+            <span class="role-tags" aria-hidden="true"><span class="tag">GTM</span><span class="tag">Operations</span><span class="tag">Analytics</span></span>
+            <span class="role-cue" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="role-panel" id="r3">
+          <div class="role-panel-inner">
+            <ul>
+              <li>Redesigned market research and outreach workflows around AI tooling, lifting qualified leads <strong>25%</strong></li>
+              <li>Built Excel KPI dashboards adopted as team standard for operational reporting and pipeline monitoring</li>
+              <li>Evaluated partnership fit, supporting outreach that secured active engagement from 15+ organizations</li>
+            </ul>
+            <p class="role-tools"><span>Skills Used</span>Excel · KPI Reporting · Market Research · Process Improvement</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="role reveal" data-tags="analytics" data-skills="excel">
+        <h3>
+          <button type="button" class="role-btn" aria-expanded="false" aria-controls="r4">
+            <span class="role-when">Jul 2024 — Aug 2024</span>
+            <span class="role-title">Data Analyst Marketing Intern</span>
+            <span class="role-co">ArtEast <span class="role-loc">· New York, NY</span></span>
+            <span class="role-tags" aria-hidden="true"><span class="tag">Analytics</span></span>
+            <span class="role-cue" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="role-panel" id="r4">
+          <div class="role-panel-inner">
+            <ul>
+              <li>Consolidated 3 years of fragmented survey data into structured Excel datasets for trend and cohort analysis</li>
+              <li>Examined <strong>1,000+ survey responses</strong> to identify engagement drivers informing targeted outreach decisions</li>
+            </ul>
+            <p class="role-tools"><span>Skills Used</span>Excel</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="edu reveal">
+      <h3 class="edu-title">Queens College, City University of New York</h3>
+      <p class="edu-degree">B.S. Quantitative Economics <span class="edu-when">· Graduated May 2026</span></p>
+      <p class="edu-honors">Carole &amp; Norman Barham Family Scholarship · Dean's List: Spring 2024, Fall 2025</p>
+    </div>
   </div>
-
-  <!-- Cricket Club -->
-  <div class="exp-item">
-    <div class="exp-left">
-      <div class="exp-date">Jan. 2024 - Present</div>
-      <div class="exp-loc">New York, NY</div>
-      <div class="exp-badge-small">President</div>
-    </div>
-    <div class="exp-right">
-      <div class="exp-title">Queens College Cricket Club</div>
-      <div class="exp-co">CUNY Queens College</div>
-      <ul class="exp-bullets">
-        <li>Led strategic planning efforts to boost club membership by putting up fliers resulting in club growth of 5+ members per month</li>
-        <li>Developed fundraising campaigns resulting in donations totaling to about $1000 for equipment including bats, balls, and jerseys</li>
-        <li>Established partnerships with other clubs, fostering collaboration, and ultimately broadening the club's impact and influence</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- ALPFA -->
-  <div class="exp-item">
-    <div class="exp-left">
-      <div class="exp-date">Aug. 2023 - Present</div>
-      <div class="exp-loc">New York, NY</div>
-      <div class="exp-badge-small">Team Leader</div>
-    </div>
-    <div class="exp-right">
-      <div class="exp-title">Association for Latino Professional of America (ALPFA)</div>
-      <div class="exp-co">CUNY Queens College Chapter</div>
-      <ul class="exp-bullets">
-        <li>Attend 5+ office visits to gain an understanding of different career paths relating to Quantitative Economics</li>
-        <li>Assisted in packing 500+ meals for Bloomberg Philanthropies Million Meals Challenge in order to feed families</li>
-        <li>Participate in 10+ professional development workshops to gain further insight regarding skills needed in the workplace</li>
-      </ul>
-    </div>
-  </div>
-
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-header">
-    <span class="section-num">06</span>
-    <h2 class="section-title">Let's build something together</h2>
-    <span class="section-label">Open to hire — North America &amp; UAE</span>
+<!-- ══ SKILLS ════════════════════════════════════════════ -->
+<section class="section" id="skills" aria-labelledby="skills-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-num">03</span>
+      <h2 class="section-title" id="skills-title">Skills</h2>
+      <p class="section-note">Marked skills are clickable — they highlight where I actually used them.</p>
+    </div>
+
+    <div class="skills reveal">
+      <div class="skill-group">
+        <h3>Analytics &amp; Reporting</h3>
+        <div class="chips">
+          <button type="button" class="chip is-linked" data-skill="excel" data-tags="ops gtm analytics" aria-pressed="false">Excel (Advanced)</button>
+          <span class="chip" data-tags="analytics">SQL</span>
+          <button type="button" class="chip is-linked" data-skill="python" data-tags="analytics projects" aria-pressed="false">Python (pandas)</button>
+          <span class="chip" data-tags="analytics">Power BI</span>
+          <span class="chip" data-tags="analytics">Tableau</span>
+          <span class="chip" data-tags="ops analytics">Google Sheets</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Business Operations</h3>
+        <div class="chips">
+          <button type="button" class="chip is-linked" data-skill="finops" data-tags="ops" aria-pressed="false">Financial Operations</button>
+          <button type="button" class="chip is-linked" data-skill="kpi" data-tags="ops analytics" aria-pressed="false">KPI Reporting</button>
+          <button type="button" class="chip is-linked" data-skill="pipeline" data-tags="ops gtm" aria-pressed="false">Pipeline Management</button>
+          <button type="button" class="chip is-linked" data-skill="market-research" data-tags="ops gtm" aria-pressed="false">Market Research</button>
+          <button type="button" class="chip is-linked" data-skill="process" data-tags="ops" aria-pressed="false">Process Improvement</button>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Additional Tools</h3>
+        <div class="chips">
+          <button type="button" class="chip is-linked" data-skill="r" data-tags="analytics projects" aria-pressed="false">R</button>
+          <span class="chip" data-tags="projects">Git</span>
+          <span class="chip" data-tags="analytics projects">Jupyter</span>
+          <span class="chip" data-tags="analytics">Bloomberg Terminal</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Certifications &amp; Languages</h3>
+        <div class="chips">
+          <span class="chip">Google Data Analytics</span>
+          <span class="chip">Bloomberg Market Concepts</span>
+          <span class="chip chip-lang">English · Urdu · Punjabi</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="skill-status" id="skillStatus" role="status"></p>
   </div>
-  <p class="contact-sub">Actively seeking full-time analyst roles starting May 2026. Open to opportunities across the USA, Canada, and the UAE — willing to relocate immediately.</p>
-  <div class="role-tags">
-    <span class="role-tag">Business Analyst</span>
-    <span class="role-tag">Financial Analyst</span>
-    <span class="role-tag">Operations Analyst</span>
-    <span class="role-tag">Strategy Analyst</span>
-    <span class="role-tag">Startups</span>
+</section>
+
+<!-- ══ PROJECTS ══════════════════════════════════════════ -->
+<section class="section" id="projects" aria-labelledby="proj-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-num">04</span>
+      <h2 class="section-title" id="proj-title">Projects</h2>
+      <p class="section-note">Problem, approach, result.</p>
+    </div>
+
+    <article class="project project-lead reveal" data-tags="projects analytics" data-skills="python">
+      <div class="project-main">
+        <p class="project-meta">Jan 2026 — May 2026 <span class="dot" aria-hidden="true"></span> Python · linearmodels · PanelOLS</p>
+        <h3 class="project-title">Remote Work and Wage Dynamics</h3>
+        <p class="project-subtitle">Remote Work Eligibility and Wage Dynamics During the COVID-19 Pandemic: Evidence from U.S. Metropolitan Areas</p>
+        <dl class="par">
+          <dt>Problem</dt>
+          <dd>Did occupations that can be performed remotely see different wage growth after the pandemic?</dd>
+          <dt>Approach</dt>
+          <dd>Difference-in-differences across <strong>544,860 occupation-by-MSA observations</strong> from the BLS Occupational Employment and Wage Statistics survey for 2018, 2019, 2021 and 2022, estimated with PanelOLS using both entity and time fixed effects.</dd>
+          <dt>Result</dt>
+          <dd>In the preferred two-way fixed-effects specification, remote-eligible occupations show roughly <strong>1.4% slower wage growth</strong> post-pandemic (p &lt; 0.001).</dd>
+          <dt>The caveat</dt>
+          <dd>An event-study specification shows part of that gap reflects a convergence trend already underway before 2020 — so the result is a documented association, not clean causal evidence of a pandemic effect.</dd>
+        </dl>
+        <div class="project-links">
+          <a class="btn btn-outline" href="Remote_Work_and_Wage_Dynamics_Piracha.pdf" target="_blank" rel="noopener">View Research (PDF)</a>
+        </div>
+      </div>
+      <figure class="scale-viz">
+        <div class="dotgrid" id="dotgrid" aria-hidden="true"></div>
+        <figcaption>
+          <strong>544,860 observations.</strong> Each dot represents roughly 1,000 occupation-by-MSA
+          cells in the panel, across four survey years.
+        </figcaption>
+      </figure>
+    </article>
+
+    <div class="project-pair">
+      <article class="project reveal" data-tags="projects analytics" data-skills="r">
+        <p class="project-meta">R <span class="dot" aria-hidden="true"></span> OLS · Heteroskedasticity-robust SE</p>
+        <h3 class="project-title">CPS Wage Analysis</h3>
+        <dl class="par">
+          <dt>Problem</dt>
+          <dd>How do gender, race, marital status, education and region relate to earnings in CPS microdata?</dd>
+          <dt>Approach</dt>
+          <dd>Three nested OLS models on log wages across <strong>115,836 CPS observations</strong> in R, with heteroskedasticity-robust standard errors, a gender × race interaction, and regional dummies.</dd>
+          <dt>Result</dt>
+          <dd>The full specification explains 6.8% of wage variation and is jointly significant, F(8, 115827) = 1,048.5, p &lt; 0.01.</dd>
+        </dl>
+        <div class="project-links">
+          <a class="btn btn-outline" href="CPS_Wage_Analysis_Piracha.pdf" target="_blank" rel="noopener">View Research (PDF)</a>
+          <a class="btn btn-outline" href="CPS_Wage_Analysis_Piracha.qmd">View Code (.qmd)</a>
+        </div>
+      </article>
+
+      <article class="project reveal" data-tags="projects">
+        <p class="project-meta">Jul 2026 <span class="dot" aria-hidden="true"></span> AI-Powered Housing Discovery Platform</p>
+        <h3 class="project-title">Gotham Intel</h3>
+        <dl class="par">
+          <dt>Problem</dt>
+          <dd>Finding housing in New York means stitching together scattered listings and neighborhood context by hand.</dd>
+          <dt>Approach</dt>
+          <dd>Built a housing search platform with a 4-person team in a single day.</dd>
+          <dt>Result</dt>
+          <dd>Shipped and presented to an audience of 300+ developers.</dd>
+        </dl>
+      </article>
+
+      <article class="project reveal" data-tags="projects">
+        <p class="project-meta">Conversational Voice AI <span class="dot" aria-hidden="true"></span> Vonage Community framework</p>
+        <h3 class="project-title">AI Phone Agent</h3>
+        <dl class="par">
+          <dt>Problem</dt>
+          <dd>Build an interactive AI phone experience capable of conversational voice interaction.</dd>
+          <dt>Approach</dt>
+          <dd>Built on the Vonage Community interactive tutorial framework and customized the AI phone-agent experience.</dd>
+          <dt>Result</dt>
+          <dd>Created and demonstrated a working AI phone-agent project in a GDG Brooklyn / Vonage community context.</dd>
+        </dl>
+        <div class="project-links">
+          <a class="btn btn-outline" href="https://github.com/shoukat2002/tutorial-interactive_tutorials" target="_blank" rel="noopener">View Code</a>
+        </div>
+        <p class="project-attrib">
+          Built on the open-source <a href="https://github.com/Vonage-Community/tutorial-interactive_tutorials" target="_blank" rel="noopener">Vonage Community interactive tutorial framework</a>. My contribution is the customized AI phone-agent experience, not the upstream repository.
+        </p>
+      </article>
+    </div>
   </div>
-  <p class="contact-note"><strong>// US Citizen (born in the USA) — no sponsorship required</strong><br>USA · Canada · UAE · Remote · Willing to relocate immediately</p>
-  <a href="Shoukat_Ali_Piracha_Resume.pdf" target="_blank" class="resume-cta">↓ Download Resume (PDF)</a>
-  <div class="contact-grid">
-    <div class="contact-cell">
-      <div class="contact-cell-label">Email</div>
-      <div class="contact-cell-val"><a href="mailto:shoukatpiracha3@gmail.com">shoukatpiracha3@gmail.com</a></div>
+</section>
+
+<!-- ══ LEADERSHIP ════════════════════════════════════════ -->
+<section class="section" id="leadership" aria-labelledby="lead-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-num">05</span>
+      <h2 class="section-title" id="lead-title">Leadership &amp; community</h2>
     </div>
-    <div class="contact-cell">
-      <div class="contact-cell-label">Phone</div>
-      <div class="contact-cell-val"><a href="tel:9293934759">929-393-4759</a></div>
-    </div>
-    <div class="contact-cell">
-      <div class="contact-cell-label">LinkedIn</div>
-      <div class="contact-cell-val"><a href="https://linkedin.com/in/ShoukatAliPiracha" target="_blank">linkedin.com/in/ShoukatAliPiracha</a></div>
+
+    <div class="lead-grid">
+      <article class="lead-card reveal" data-tags="ops">
+        <p class="lead-when">Jan 2024 — May 2026</p>
+        <h3>President &amp; Treasurer</h3>
+        <p class="lead-org">Queens College Cricket Club</p>
+        <p class="lead-desc">Managed a $2K+ annual budget and secured $1.5K+ in student government funding through written proposals.</p>
+      </article>
+
+      <article class="lead-card reveal" data-tags="ops">
+        <p class="lead-when">Jul 2026 — Present</p>
+        <h3>Volunteer</h3>
+        <p class="lead-org">Google Developer Group (GDG) Brooklyn</p>
+        <p class="lead-desc">Support AI community events, coordinating registration and logistics for 100+ participants.</p>
+      </article>
     </div>
   </div>
-  <div class="contact-meta-grid">
-    <div class="contact-meta-cell">
-      <div class="contact-meta-label">Based In</div>
-      <div class="contact-meta-val">New York, NY</div>
-    </div>
-    <div class="contact-meta-cell">
-      <div class="contact-meta-label">Open To</div>
-      <div class="contact-meta-val">USA · Canada · UAE · Remote</div>
-    </div>
-    <div class="contact-meta-cell">
-      <div class="contact-meta-label">Work Auth</div>
-      <div class="contact-meta-val">US Citizen (born in the USA)</div>
-    </div>
-    <div class="contact-meta-cell">
-      <div class="contact-meta-label">Graduation</div>
-      <div class="contact-meta-val">May 2026</div>
-    </div>
-    <div class="contact-meta-cell">
-      <div class="contact-meta-label">Degree</div>
-      <div class="contact-meta-val">BS Quantitative Economics</div>
+</section>
+
+<!-- ══ CONTACT ═══════════════════════════════════════════ -->
+<section class="section section-contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <h2 class="contact-head reveal" id="contact-title">Let's build better <em>operations</em>.</h2>
+    <p class="contact-sub reveal">
+      Open to Business Operations, Strategy &amp; Operations, GTM, and startup opportunities.
+    </p>
+    <p class="contact-status reveal">
+      US Citizen <span class="dot" aria-hidden="true"></span> Open to Relocation <span class="dot" aria-hidden="true"></span> Based in New York City
+    </p>
+
+    <div class="contact-grid reveal">
+      <a class="contact-card" href="mailto:shoukatpiracha3@gmail.com">
+        <span class="contact-k">Email</span>
+        <span class="contact-v">shoukatpiracha3@gmail.com</span>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/shoukatalipiracha" target="_blank" rel="noopener">
+        <span class="contact-k">LinkedIn</span>
+        <span class="contact-v">in/shoukatalipiracha</span>
+      </a>
+      <a class="contact-card" href="https://github.com/shoukat2002" target="_blank" rel="noopener">
+        <span class="contact-k">GitHub</span>
+        <span class="contact-v">github.com/shoukat2002</span>
+      </a>
+      <a class="contact-card" href="https://x.com/ShoukatBuilds" target="_blank" rel="noopener">
+        <span class="contact-k">X</span>
+        <span class="contact-v">@ShoukatBuilds</span>
+      </a>
+      <a class="contact-card" href="Shoukat_Ali_Piracha_Resume.pdf" target="_blank" rel="noopener">
+        <span class="contact-k">Resume</span>
+        <span class="contact-v">PDF · one page</span>
+      </a>
     </div>
   </div>
 </section>
 
 </main>
 
-<footer>
-  <span>SAP://portfolio © 2026 Shoukat Ali Piracha · CUNY Queens College · US Citizen · Open to North America &amp; UAE</span>
-  <span>BS Quantitative Economics · May 2026</span>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>Shoukat Ali Piracha — New York, NY</p>
+    <p>B.S. Quantitative Economics, Queens College (CUNY)</p>
+  </div>
 </footer>
 
+<!-- ══ 30-SECOND VERSION ═════════════════════════════════ -->
+<dialog class="tldr" id="tldr" aria-labelledby="tldr-title">
+  <div class="tldr-inner">
+    <div class="tldr-head">
+      <h2 id="tldr-title">The 30-second version</h2>
+      <button type="button" class="tldr-close" id="tldrClose" aria-label="Close">&times;</button>
+    </div>
+    <ul class="tldr-list">
+      <li><strong>B.S. Quantitative Economics</strong>, Queens College (CUNY), May 2026.</li>
+      <li><strong>Startup GTM</strong> — creator sourcing and outreach ownership at a stealth AI startup.</li>
+      <li><strong>Financial operations</strong> — payments, expense tracking, and client coordination at Kassam Trading.</li>
+      <li><strong>25% lift in qualified leads</strong> at Runwei by redesigning research and outreach workflows.</li>
+      <li><strong>Toolkit</strong> — Excel, SQL, Python, Power BI.</li>
+      <li><strong>US Citizen</strong>, open to relocation, based in New York City.</li>
+    </ul>
+    <div class="tldr-actions">
+      <a class="btn btn-solid" href="Shoukat_Ali_Piracha_Resume.pdf" target="_blank" rel="noopener">View Resume</a>
+      <button type="button" class="btn btn-outline" id="tldrBack">Back to the full site</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="script.js"></script>
 </body>
 </html>
