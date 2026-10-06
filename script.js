@@ -40,7 +40,7 @@
   });
 
   window.addEventListener('resize', function () {
-    if (window.innerWidth > 1080) setNav(false);
+    if (window.innerWidth > 1240) setNav(false);
   });
 
   /* ── Lens filter ─────────────────────────────────── */

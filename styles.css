@@ -753,7 +753,7 @@ button.chip.is-dimmed::before { background: var(--ink-3); }
 /* ═══ RESPONSIVE ═══════════════════════════════════════ */
 /* Navigation collapses earlier than the content layout: six section links
    plus two actions need more room than the rest of the page does. */
-@media (max-width: 1080px) {
+@media (max-width: 1240px) {
   .nav-toggle { display: grid; }
 
   .site-nav {
@@ -876,3 +876,17 @@ button.chip.is-dimmed::before { background: var(--ink-3); }
   .contact-grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 520px) { .contact-grid-4 { grid-template-columns: 1fr; } }
+
+.proj-card .project-attrib { margin: -8px 0 22px; }
+
+/* Certifications grid + volunteering card */
+.cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.lead-grid .lead-card-wide { grid-column: 1 / -1; }
+.lead-list { list-style: none; margin-top: 4px; }
+.lead-list li { position: relative; padding-left: 18px; font-size: 14.5px; color: var(--ink-2); line-height: 1.65; }
+.lead-list li + li { margin-top: 8px; }
+.lead-list li::before { content: ""; position: absolute; left: 0; top: .68em; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); opacity: .55; }
+@media (max-width: 960px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .cert-grid { grid-template-columns: 1fr; } }
+
+.brand-name { white-space: nowrap; }
