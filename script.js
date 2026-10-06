@@ -40,23 +40,8 @@
   });
 
   window.addEventListener('resize', function () {
-    if (window.innerWidth > 780) setNav(false);
+    if (window.innerWidth > 1080) setNav(false);
   });
-
-  /* ── Hero role cycler ────────────────────────────── */
-  var cycler = $('#cycler');
-  if (cycler && !reduceMotion) {
-    var words = cycler.dataset.words.split('|');
-    var i = 0;
-    setInterval(function () {
-      cycler.classList.add('is-out');
-      setTimeout(function () {
-        i = (i + 1) % words.length;
-        cycler.textContent = words[i];
-        cycler.classList.remove('is-out');
-      }, 300);
-    }, 2800);
-  }
 
   /* ── Lens filter ─────────────────────────────────── */
   var lensBtns = $$('.lens-btn');
@@ -65,10 +50,9 @@
 
   var HINTS = {
     all:       "Everything is shown. Pick a focus to see what's most relevant.",
-    ops:       'Highlighting operations and finance work — Kassam, Runwei, and budget ownership.',
-    gtm:       'Highlighting go-to-market work — creator sourcing, outreach, and partnership pipelines.',
-    analytics: 'Highlighting analysis work — survey data, KPI reporting, and econometric research.',
-    projects:  'Highlighting independent and team-built projects.'
+    finance:   'Highlighting finance and operations work: JPMorganChase, payments and financial records at Kassam, and budget ownership.',
+    analytics: 'Highlighting analysis work: KPI dashboards, survey data, and econometric research.',
+    research:  'Highlighting quantitative research: two econometric studies using BLS and CPS data.'
   };
 
   var applyLens = function (lens) {
@@ -215,26 +199,6 @@
     sections.forEach(function (s) { spy.observe(s); });
   }
 
-  /* ── Video intro ─────────────────────────────────────
-     The section ships hidden and only appears once the browser
-     confirms the file is playable, so a missing or unsupported
-     video never leaves a broken player on the page. */
-  var introSection = $('#intro');
-  var introVideo = $('#introVideo');
-
-  if (introSection && introVideo) {
-    var showIntro = function () {
-      if (!introSection.hidden) return;
-      introSection.hidden = false;
-      /* The reveal observer already ran while this was hidden. */
-      $$('.reveal', introSection).forEach(function (el) {
-        el.classList.add('is-visible');
-      });
-    };
-    introVideo.addEventListener('loadedmetadata', showIntro);
-    introVideo.addEventListener('canplay', showIntro);
-    if (introVideo.readyState >= 1) showIntro();
-  }
 
   /* ── 30-second version dialog ────────────────────── */
   var dlg = $('#tldr');
