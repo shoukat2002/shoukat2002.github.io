@@ -1,0 +1,219 @@
+---
+title: "CPS_DATA_EXERCISE"
+date: "`r Sys.Date()`"
+format:
+  pdf:
+    toc: true
+    toc_depth: 3
+execute: 
+  echo: true
+geometry: "landscape, margin=0.25in"
+fontsize: 12pt
+---
+
+# Setting Up the Environment
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Data Wrangling and Analysis
+
+## (3) Importing Data
+
+```{r Q3, include=TRUE, message=FALSE, warning=FALSE}
+CPSDATA <- read.csv("CPSDATA.csv")
+str(CPSDATA)
+CPSDATA[] <- lapply(CPSDATA, function(x) {
+  if (is.character(x) && all(grepl("^[0-9]+$", x))) {
+    as.numeric(x)
+  } else {
+    x
+  }
+})
+```
+
+## (4) SEX Variable
+
+```{r Q4, include=TRUE, message=FALSE, warning=FALSE}
+CPSDATA$FEMALE <- ifelse(CPSDATA$SEX == 2, 1, 0)
+head(CPSDATA$FEMALE)
+```
+
+## (5) RACE Variable
+
+```{r Q5, include=TRUE, message=FALSE, warning=FALSE}
+CPSDATA$NONWHITE <- ifelse(CPSDATA$RACE != 100 & CPSDATA$RACE != 999, 1, 0)
+head(CPSDATA$NONWHITE)
+```
+
+## (6) MARST Variable
+
+```{r Q6, include=TRUE, message=FALSE, warning=FALSE}
+CPSDATA$MARRIED <- ifelse(CPSDATA$MARST == 1, 1, 0)
+head(CPSDATA$MARRIED)
+```
+
+## (7) EDUC99 Variable
+
+```{r Q7, include=TRUE, message=FALSE, warning=FALSE}
+CPSDATA$HIGHSCHOOL <- ifelse(CPSDATA$EDUC99 >= 10, 1, 0)
+head(CPSDATA$HIGHSCHOOL)
+```
+
+## (8) INCWAGE Variable
+
+```{r Q8, include=TRUE, message=FALSE, warning=FALSE}
+CPSDATA$INCWAGE[CPSDATA$INCWAGE %in% c(99999998, 99999999)] <- NA
+head(CPSDATA$INCWAGE)
+```
+
+## (9) REGION Variable
+
+```{r Q9, include=TRUE, message=FALSE, warning=FALSE}
+CPSDATA$REGION <- ifelse(CPSDATA$REGION %in% c(11, 12), 1,
+                         ifelse(CPSDATA$REGION %in% c(21, 22), 2,
+                         ifelse(CPSDATA$REGION %in% c(31, 32, 33), 3, 4)))
+head(CPSDATA$REGION)
+```
+
+## (10) Droping Old Variables
+
+```{r Q10, include=TRUE, message=FALSE, warning=FALSE}
+CPSDATA <- subset(CPSDATA, select = -c(SEX, RACE, MARST, EDUC99))
+head(CPSDATA)
+```
+
+## (11) Descriptive Statistics
+
+```{r Q11, include=TRUE, message=FALSE, warning=FALSE}
+library(dplyr)
+continuous_vars <- CPSDATA %>%
+  select(INCWAGE) %>% 
+  summarise(
+    Mean = mean(INCWAGE, na.rm = TRUE),
+    SD = sd(INCWAGE, na.rm = TRUE),
+    Min = min(INCWAGE, na.rm = TRUE),
+    Max = max(INCWAGE, na.rm = TRUE)
+  )
+
+continuous_vars <- data.frame(
+  Statistic = c("Mean", "SD", "Min", "Max"),
+  INCWAGE = c(continuous_vars$Mean, 
+              continuous_vars$SD, 
+              continuous_vars$Min, 
+              continuous_vars$Max)
+)
+
+print("Descriptive statistics for continuous variables:")
+print(continuous_vars)
+
+categorical_vars <- CPSDATA %>%
+  select(FEMALE, NONWHITE, MARRIED, HIGHSCHOOL, REGION)
+
+categorical_stats <- lapply(names(categorical_vars), function(var) {
+  freq_table <- table(categorical_vars[[var]], useNA = "ifany")
+  prop_table <- prop.table(freq_table)
+  
+  data.frame(
+    Variable = var,
+    Category = names(freq_table),
+    Frequency = as.numeric(freq_table),
+    Proportion = round(as.numeric(prop_table), 4) 
+  )
+})
+
+categorical_stats_df <- do.call(rbind, categorical_stats)
+
+print("Descriptive statistics for categorical variables:")
+print(categorical_stats_df)
+```
+
+## (12) INCWAGE Fractions
+
+```{r Q12, include=TRUE, message=FALSE, warning=FALSE}
+CPSDATA$INCWAGE <- ifelse(CPSDATA$INCWAGE == 0, 0.01, CPSDATA$INCWAGE)
+```
+
+## (13) Model 1
+
+```{r Q13, include=TRUE, message=FALSE, warning=FALSE}
+library(sandwich)
+library(lmtest)
+model1 <- lm(log(INCWAGE) ~ FEMALE + NONWHITE + MARRIED + HIGHSCHOOL, 
+             data = CPSDATA)
+
+coeftest(model1, vcov = vcovHC(model1, type = "HC"))
+```
+
+## (14) Model 2
+
+```{r Q14, include=TRUE, message=FALSE, warning=FALSE}
+model2 <- lm(log(INCWAGE) ~ FEMALE + NONWHITE + FEMALE:NONWHITE + 
+               MARRIED + HIGHSCHOOL, data = CPSDATA)
+
+coeftest(model2, vcov = vcovHC(model2, type = "HC"))
+```
+
+## (15) Model 3
+
+```{r Q15, include=TRUE, message=FALSE, warning=FALSE}
+CPSDATA$R2 <- ifelse(CPSDATA$REGION == 2, 1, 0)
+CPSDATA$R3 <- ifelse(CPSDATA$REGION == 3, 1, 0)
+CPSDATA$R4 <- ifelse(CPSDATA$REGION == 4, 1, 0)
+
+model3 <- lm(log(INCWAGE) ~ FEMALE + NONWHITE + FEMALE:NONWHITE + 
+               MARRIED + HIGHSCHOOL + R2 + R3 + R4, data = CPSDATA)
+
+coeftest(model3, vcov = vcovHC(model3, type = "HC"))
+```
+
+## (16) Dummification of "Region" and Explanation
+
+Excluding the first region avoids perfect multicollinearity, commonly known as the "dummy variable trap". By excluding one region, the model can estimate the effects of the other regions relative to the excluded region and serve as a comparison.
+
+## (17) Table Presentation of the Results
+
+```{r Q17, include=TRUE, message=FALSE, warning=FALSE}
+library(stargazer)
+stargazer(model1, model2, model3,
+          type = "text",
+          title = "Regression Results",
+          column.labels = c("Model 1", "Model 2", "Model 3"),
+          covariate.labels = c("FEMALE", "NONWHITE", "FEMALE:NONWHITE", "MARRIED", "HIGHSCHOOL", "R2", "R3", "R4"),
+          dep.var.labels = "Log(INCWAGE)")
+```
+
+## (17.1) Interpretation of Results from Model 3
+
+The regression analysis (Model 3) examines the effects of gender, race, marital status, education, and region on the natural logarithm of income (`log(INCWAGE)`) using heteroskedasticity-robust standard errors. The model includes interaction terms and regional dummy variables to account for potential differences across groups and regions.
+
+## (17.2) Main Findings:
+
+1.  **Gender**:
+    -   The coefficient for `FEMALE` is significant ($β$ = -1.732, SE = 0.049, p \< .01), indicating that women, on average, had 173.2% lower income in 2024 compared to men, holding all other variables constant.
+2.  **Race**:
+    -   The coefficient for `NONWHITE` is significant ($β$ = -0.425, SE = 0.074, p \< .01). This suggests that nonwhite individuals had 42.5% lower income in 2024 than white individuals, all else being equal.
+3.  **Gender × Race Interaction**:
+    -   The interaction term `FEMALE:NONWHITE` is significant ($β$ = 0.825, SE = 0.044, p \< .01), indicating that the income gap associated with gender in 2024 was mitigated for nonwhite women.
+4.  **Marital Status**:
+    -   Being married (`MARRIED`) is associated with a significant increase in income ($β$ = 4.608, SE = 0.062, p \< .01), suggesting that married individuals in 2024 had 460.8% higher income on average compared to unmarried individuals.
+5.  **Education**:
+    -   The coefficient for having a high school diploma or higher (`HIGHSCHOOL`) is significant ($β$ = 0.345, SE = 0.074, p \< .01), indicating that high school or higher graduates earned 34.5% more than those without a high school diploma in 2024.
+6.  **Region**:
+    -   The regional dummy variables reveal significant income disparities across regions:
+        -   Individuals in Region 2 (`R2`) earned 49.0% less in 2024 than those in Region 1 (baseline) ($β$ = -0.490, SE = 0.065, p \< .01).
+        -   Individuals in Region 3 (`R3`) earned 23.7% less than those in Region 1 in 2024 ($β$ = -0.237, SE = 0.067, p \< .01).
+        -   Individuals in Region 4 (`R4`) earned 69.0% more than those in Region 1 in 2024 ($β$ = 0.690, SE = 0.101, p \< .01).
+7.  **Constant Term**:
+    -   The intercept is significant ($β$ = 1.306, SE = 0.081, p \< .01), representing the baseline `log(INCWAGE)` for men, white individuals, unmarried, without a high school diploma, and residing in Region 1 in 2024.
+
+## (17.3) Model Performance:
+
+-   **R²**: The model explains 6.8% of the variance in `log(INCWAGE)`.
+-   **Adjusted R²**: The model explains 6.7% of the variance in `log(INCWAGE)` after accounting for the number of predictors in the model.
+-   **F-statistic**: The overall model is statistically significant (F(8; 115827) = 1,048.518, p \< .01), suggesting that the predictors collectively have a significant effect on income.
+
+## (17.4) Conclusion:
+
+Model 3 highlights significant disparities in income associated with gender, race, marital status, education, and geographic region. This emphasizes the interplay of demographic and regional factors in shaping income distributions.
